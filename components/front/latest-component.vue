@@ -1,171 +1,10 @@
 <template>
         <div class="overflow-hidden">
           <div class="row mt-md-3">
-            <div class="col-lg-12">
-              <div class="iq-card">
-                <div class="iq-card-header">
-                  <div class="iq-header-title">
-                    <h4 class="card-title">Featured Albums</h4>
-                  </div>
-                  <div class="d-flex iq-view">
-                    <b class="text-primary">
-                      <nuxt-link to="#" class="text-decoration-none">View More <i class="fas fa-angle-right"></i></nuxt-link>
-                    </b>
-                  </div>
-                </div>
-                <div class="iq-card-body">
-                  <div class="row">
-                    <div class="col-lg-2 col-md-3 col-sm-6 col-12 mb-2 iq-music-box"
-                         v-for="i in 6"
-                         :key="i"
-                         aria-hidden="false">
-                      <div class="card">
-                        <div class="iq-thumb">
-                          <div class="iq-music-overlay"></div>
-                          <nuxt-link to="#" >
-                            <img src="/05.png" alt="" class="card-img-top">
-                          </nuxt-link>
-                          <nuxt-link to="#" class=" play-btn">
-                            <i class="far fa-play-circle"></i>
-                          </nuxt-link>
-                        </div>
-                        <div class="card-body">
-                          <h5 class="text-center">
-                            Pop Smoke
-                          </h5>
-                          <p class="text-center">
-                            Justin Bieber
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div class="iq-card">
-                <div class="iq-card-header">
-                  <div class="iq-header-title">
-                    <h4 class="card-title">Top Songs</h4>
-                  </div>
-                  <div class="d-flex iq-view">
-                    <b class="text-primary">
-                      <nuxt-link to="#" class="text-decoration-none">View More <i class="fas fa-angle-right"></i></nuxt-link>
-                    </b>
-                  </div>
-                </div>
-                <div class="iq-card-body">
-                  <div class="row">
-                    <div class="col-lg-2 col-md-3 col-sm-6 col-12 mb-2 iq-music-box"
-                         v-for="i in 12"
-                         :key="i"
-                         aria-hidden="false">
-                      <div class="card">
-                        <div class="iq-thumb">
-                          <div class="iq-music-overlay"></div>
-                          <nuxt-link to="#" >
-                            <img src="/07.png" alt="" class="card-img-top">
-                          </nuxt-link>
-                          <nuxt-link to="#" class=" play-btn">
-                            <i class="far fa-play-circle"></i>
-                          </nuxt-link>
-                        </div>
-                        <div class="card-body">
-                          <h5 class="text-center">
-                            God Whispered
-                          </h5>
-                          <p class="text-center">
-                            Amber Mark
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div class="iq-card">
-                <div class="iq-card-header">
-                  <div class="iq-header-title">
-                    <h4 class="card-title">Popular Hindi Songs</h4>
-                  </div>
-                  <div class="d-flex iq-view">
-                    <b class="text-primary">
-                      <nuxt-link to="#" class="text-decoration-none">View More <i class="fas fa-angle-right"></i></nuxt-link>
-                    </b>
-                  </div>
-                </div>
-                <div class="iq-card-body">
-                  <div class="row">
-                    <div class="col-lg-2 col-md-3 col-sm-6 col-12 mb-2 iq-music-box"
-                         v-for="i in 12"
-                         :key="i"
-                         aria-hidden="false">
-                      <div class="card">
-                        <div class="iq-thumb">
-                          <div class="iq-music-overlay"></div>
-                          <nuxt-link to="#" >
-                            <img src="/06.png" alt="" class="card-img-top">
-                          </nuxt-link>
-                          <nuxt-link to="#" class=" play-btn">
-                            <i class="far fa-play-circle"></i>
-                          </nuxt-link>
-                        </div>
-                        <div class="card-body">
-                          <h5 class="text-center">
-                            All Black
-                          </h5>
-                          <p class="text-center">
-                            Sukh E
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div class="iq-card">
-                <div class="iq-card-header">
-                  <div class="iq-header-title">
-                    <h4 class="card-title">Artist List</h4>
-                  </div>
-                  <div class="d-flex iq-view">
-                    <b class="text-primary">
-                      <nuxt-link to="#" class="text-decoration-none">View More <i class="fas fa-angle-right"></i></nuxt-link>
-                    </b>
-                  </div>
-                </div>
-                <div class="iq-card-body">
-                  <div class="row">
-                    <div class="col-lg-2 col-md-3 col-sm-6 col-12 mb-2 iq-music-box artist-list"
-                         v-for="i in 12"
-                         :key="i"
-                         aria-hidden="false">
-                      <div class="card">
-                        <div class="iq-thumb-artist">
-                          <div class="iq-music-overlay"></div>
-                          <nuxt-link to="#" >
-                            <img src="/01.png" alt="" class="card-img-top">
-                          </nuxt-link>
-                          <nuxt-link to="#" class=" play-btn">
-                            <i class="far fa-play-circle"></i>
-                          </nuxt-link>
-                        </div>
-                        <div class="card-body">
-                          <h5 class="text-center">
-                            Babu maan
-                          </h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <front-cat-featured-albums/>
+            <front-top-songs/>
+            <front-cat-popular-hindi-song/>
+            <front-cat-artist-list/>
           </div>
         </div>
 </template>
@@ -191,6 +30,8 @@ export default {
   background: var(--iq-light-card);
   border-radius: 15px;
   margin-bottom: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
   border: none;
   box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1);
 }

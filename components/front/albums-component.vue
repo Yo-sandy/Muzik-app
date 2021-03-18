@@ -41,8 +41,8 @@
           </div>
         </div>
         <div class="col-lg-5">
-          <ul class="list-unstyled">
-            <li>
+          <ul class="list-unstyled row">
+            <li class="col-lg-6 col-md-6">
               <div class="mini-music-list">
                 <div class="p-0">
                    <div class="media">
@@ -57,12 +57,224 @@
                           </nuxt-link>
                        </div>
                      </div>
+                     <div class="media-body">
+                       <h6 class="mb-0">Better Now</h6>
+                       <small>Beyonce</small>
+                     </div>
+                   </div>
+                </div>
+              </div>
+            </li>
+            <li class="col-lg-6 col-md-6">
+              <div class="mini-music-list">
+                <div class="p-0">
+                   <div class="media">
+                     <div class="iq-thumb-hotsong">
+                       <div class="iq-music-overlay"></div>
+                       <nuxt-link to="#">
+                         <img src="/better%20now.png" class="img-fluid avatar-60">
+                       </nuxt-link>
+                       <div class="overlay-music-icon">
+                          <nuxt-link to="#">
+                            <i class="far fa-play-circle"></i>
+                          </nuxt-link>
+                       </div>
+                     </div>
+                     <div class="media-body">
+                       <h6 class="mb-0">Better Now</h6>
+                       <small>Beyonce</small>
+                     </div>
+                   </div>
+                </div>
+              </div>
+            </li>
+            <li class="col-lg-6 col-md-6">
+              <div class="mini-music-list">
+                <div class="p-0">
+                   <div class="media">
+                     <div class="iq-thumb-hotsong">
+                       <div class="iq-music-overlay"></div>
+                       <nuxt-link to="#">
+                         <img src="/better%20now.png" class="img-fluid avatar-60">
+                       </nuxt-link>
+                       <div class="overlay-music-icon">
+                          <nuxt-link to="#">
+                            <i class="far fa-play-circle"></i>
+                          </nuxt-link>
+                       </div>
+                     </div>
+                     <div class="media-body">
+                       <h6 class="mb-0">Better Now</h6>
+                       <small>Beyonce</small>
+                     </div>
+                   </div>
+                </div>
+              </div>
+            </li>
+            <li class="col-lg-6 col-md-6">
+              <div class="mini-music-list">
+                <div class="p-0">
+                   <div class="media">
+                     <div class="iq-thumb-hotsong">
+                       <div class="iq-music-overlay"></div>
+                       <nuxt-link to="#">
+                         <img src="/better%20now.png" class="img-fluid avatar-60">
+                       </nuxt-link>
+                       <div class="overlay-music-icon">
+                          <nuxt-link to="#">
+                            <i class="far fa-play-circle"></i>
+                          </nuxt-link>
+                       </div>
+                     </div>
+                     <div class="media-body">
+                       <h6 class="mb-0">Better Now</h6>
+                       <small>Beyonce</small>
+                     </div>
+                   </div>
+                </div>
+              </div>
+            </li>
+            <li class="col-lg-6 col-md-6">
+              <div class="mini-music-list">
+                <div class="p-0">
+                   <div class="media">
+                     <div class="iq-thumb-hotsong">
+                       <div class="iq-music-overlay"></div>
+                       <nuxt-link to="#">
+                         <img src="/better%20now.png" class="img-fluid avatar-60">
+                       </nuxt-link>
+                       <div class="overlay-music-icon">
+                          <nuxt-link to="#">
+                            <i class="far fa-play-circle"></i>
+                          </nuxt-link>
+                       </div>
+                     </div>
+                     <div class="media-body">
+                       <h6 class="mb-0">Better Now</h6>
+                       <small>Beyonce</small>
+                     </div>
+                   </div>
+                </div>
+              </div>
+            </li>
+            <li class="col-lg-6 col-md-6">
+              <div class="mini-music-list">
+                <div class="p-0">
+                   <div class="media">
+                     <div class="iq-thumb-hotsong">
+                       <div class="iq-music-overlay"></div>
+                       <nuxt-link to="#">
+                         <img src="/better%20now.png" class="img-fluid avatar-60">
+                       </nuxt-link>
+                       <div class="overlay-music-icon">
+                          <nuxt-link to="#">
+                            <i class="far fa-play-circle"></i>
+                          </nuxt-link>
+                       </div>
+                     </div>
+                     <div class="media-body">
+                       <h6 class="mb-0">Better Now</h6>
+                       <small>Beyonce</small>
+                     </div>
+                   </div>
+                </div>
+              </div>
+            </li>
+            <li class="col-lg-6 col-md-6">
+              <div class="mini-music-list">
+                <div class="p-0">
+                   <div class="media">
+                     <div class="iq-thumb-hotsong">
+                       <div class="iq-music-overlay"></div>
+                       <nuxt-link to="#">
+                         <img src="/better%20now.png" class="img-fluid avatar-60">
+                       </nuxt-link>
+                       <div class="overlay-music-icon">
+                          <nuxt-link to="#">
+                            <i class="far fa-play-circle"></i>
+                          </nuxt-link>
+                       </div>
+                     </div>
+                     <div class="media-body">
+                       <h6 class="mb-0">Better Now</h6>
+                       <small>Beyonce</small>
+                     </div>
+                   </div>
+                </div>
+              </div>
+            </li>
+            <li class="col-lg-6 col-md-6">
+              <div class="mini-music-list">
+                <div class="p-0">
+                   <div class="media">
+                     <div class="iq-thumb-hotsong">
+                       <div class="iq-music-overlay"></div>
+                       <nuxt-link to="#">
+                         <img src="/better%20now.png" class="img-fluid avatar-60">
+                       </nuxt-link>
+                       <div class="overlay-music-icon">
+                          <nuxt-link to="#">
+                            <i class="far fa-play-circle"></i>
+                          </nuxt-link>
+                       </div>
+                     </div>
+                     <div class="media-body">
+                       <h6 class="mb-0">Better Now</h6>
+                       <small>Beyonce</small>
+                     </div>
+                   </div>
+                </div>
+              </div>
+            </li>
+            <li class="col-lg-6 col-md-6">
+              <div class="mini-music-list">
+                <div class="p-0">
+                   <div class="media">
+                     <div class="iq-thumb-hotsong">
+                       <div class="iq-music-overlay"></div>
+                       <nuxt-link to="#">
+                         <img src="/better%20now.png" class="img-fluid avatar-60">
+                       </nuxt-link>
+                       <div class="overlay-music-icon">
+                          <nuxt-link to="#">
+                            <i class="far fa-play-circle"></i>
+                          </nuxt-link>
+                       </div>
+                     </div>
+                     <div class="media-body">
+                       <h6 class="mb-0">Better Now</h6>
+                       <small>Beyonce</small>
+                     </div>
+                   </div>
+                </div>
+              </div>
+            </li>
+            <li class="col-lg-6 col-md-6">
+              <div class="mini-music-list">
+                <div class="p-0">
+                   <div class="media">
+                     <div class="iq-thumb-hotsong">
+                       <div class="iq-music-overlay"></div>
+                       <nuxt-link to="#">
+                         <img src="/better%20now.png" class="img-fluid avatar-60">
+                       </nuxt-link>
+                       <div class="overlay-music-icon">
+                          <nuxt-link to="#">
+                            <i class="far fa-play-circle"></i>
+                          </nuxt-link>
+                       </div>
+                     </div>
+                     <div class="media-body">
+                       <h6 class="mb-0">Better Now</h6>
+                       <small>Beyonce</small>
+                     </div>
                    </div>
                 </div>
               </div>
             </li>
           </ul>
         </div>
+        <front-cat-top-songs/>
       </div>
     </div>
 </template>
@@ -295,5 +507,14 @@ i.fa-volume-down{
   height: 60px;
   width: 60px;
   line-height: 60px;
+}
+.media .media-body{
+  margin-left: 1rem;
+}
+.media .media-body h6{
+  font-size: 1.0em;
+  line-height: 1.5;
+  color: var(--iq-title-text);
+  font-weight: 600;
 }
 </style>

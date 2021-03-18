@@ -95,7 +95,7 @@
               </div>
             </div>
           </div>
-          <front-trending-song/>
+          <front-cat-trending-song/>
         </div>
       </div>
     </div>
