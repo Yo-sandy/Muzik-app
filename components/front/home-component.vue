@@ -45,7 +45,7 @@
                       <span class="mb-0 col-md-2 iq-m-time" style="color: var(--iq-white)">5:45</span>
                       <p> <i class="far fa-star"></i></p>
                       <p><i class="far fa-play-circle"></i></p>
-                      <p><i class="fas fa-ellipsis-v"></i></p>
+                      <p class="primary-color"><i class="fas fa-ellipsis-v"></i></p>
                     </div>
                     <div class="player2">
                       <img src="/headphone-img-2.png" class="img-border-radius">
@@ -56,7 +56,7 @@
                       <span class="mb-0 col-md-2 iq-m-time" style="color: var(--iq-white)">5:45</span>
                       <p> <i class="far fa-star"></i></p>
                       <p><i class="far fa-play-circle"></i></p>
-                      <p><i class="fas fa-ellipsis-v"></i></p>
+                      <p class="primary-color"><i class="fas fa-ellipsis-v"></i></p>
                     </div>
                     <div class="player2">
                       <img src="/headphone-img-2.png" class="img-border-radius">
@@ -67,7 +67,7 @@
                       <span class="mb-0 col-md-2 iq-m-time" style="color: var(--iq-white)">5:45</span>
                       <p> <i class="far fa-star"></i></p>
                       <p><i class="far fa-play-circle"></i></p>
-                      <p><i class="fas fa-ellipsis-v"></i></p>
+                      <p class="primary-color"><i class="fas fa-ellipsis-v"></i></p>
                     </div>
                     <div class="player2">
                       <img src="/headphone-img-2.png" class="img-border-radius">
@@ -78,7 +78,7 @@
                       <span class="mb-0 col-md-2 iq-m-time" style="color: var(--iq-white)">5:45</span>
                       <p> <i class="far fa-star"></i></p>
                       <p><i class="far fa-play-circle"></i></p>
-                      <p><i class="fas fa-ellipsis-v"></i></p>
+                      <p class="primary-color"><i class="fas fa-ellipsis-v"></i></p>
                     </div>
                     <div class="player2">
                       <img src="/headphone-img-2.png" class="img-border-radius">
@@ -89,12 +89,13 @@
                       <span class="mb-0 col-md-2 iq-m-time" style="color: var(--iq-white)">5:45</span>
                       <p> <i class="far fa-star"></i></p>
                       <p><i class="far fa-play-circle"></i></p>
-                      <p><i class="fas fa-ellipsis-v"></i></p>
+                      <p class="primary-color"><i class="fas fa-ellipsis-v"></i></p>
                     </div>
                 </div>
               </div>
             </div>
           </div>
+          <front-trending-song/>
         </div>
       </div>
     </div>
@@ -110,8 +111,7 @@ export default {
 .content-page{
   padding: 20px 15px 20px;
 }
-.row{
-}
+
 .col-lg-12{
   position: relative;
   width: 100%;
@@ -248,23 +248,15 @@ export default {
 .playpause-track1, .prev-track1, .next-track1 {
   padding: 0 15px;
   color: var(--iq-white);
-  /* Smoothly transition the opacity */
   transition: opacity .2s;
 }
-.playpause-track1:hover, .prev-track1:hover, .next-track1:hover {
-  opacity: 1.0;
-}
+
 
 ul.iq-song-slide li p {
   color: var(--iq-white);
   line-height: normal;
 }
-p.iq-music-title, .feature-list h6  {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-}
+
 ul.iq-song-slide li span {
   color: var(--iq-white)
 }
@@ -289,5 +281,8 @@ ul.iq-song-slide li {
 .player2 p{
   font-size: 32px;
   color: var(--iq-white);
+}
+.player2 .primary-color{
+  color: var(--iq-primary);
 }
 </style>

@@ -201,6 +201,13 @@ export default {
   justify-content: space-between !important;
   display: flex;
 }
+.card-title{
+  font-weight: 700;
+  color: var(--iq-title-text);
+}
+.card-body p{
+  color: var(--iq-body-text);
+}
 .card{
   margin-bottom: 10px;
   border-top-right-radius: 15px;
