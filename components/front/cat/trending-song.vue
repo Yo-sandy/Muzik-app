@@ -22,18 +22,18 @@
                 <div class="card">
                   <div class="iq-thumb">
                     <div class="iq-music-overlay"></div>
-                    <nuxt-link to="#" >
+                    <nuxt-link to="single-song" >
                       <img src="/move%20like%20it.png" alt="" class="card-img-top">
                     </nuxt-link>
-                    <nuxt-link to="#" class=" play-btn">
+                    <nuxt-link to="single-song" class=" play-btn">
                       <i class="far fa-play-circle"></i>
                     </nuxt-link>
                   </div>
-                  <div class="card-body">
-                    <h5 class="text-center">
+                  <div class="card-body text-center">
+                    <nuxt-link to="/song-details">
                       Pop Smoke
-                    </h5>
-                    <p class="text-center">
+                    </nuxt-link>
+                    <p>
                       Justin Bieber
                     </p>
                   </div>
@@ -92,9 +92,10 @@ export default {
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
 }
-.card h5{
+
+.card-body a{
+  text-decoration: none;
   font-weight: 600;
-  margin: 0px;
   font-size: 1.400em;
   color: var(--iq-black);
 }

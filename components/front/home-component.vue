@@ -5,7 +5,7 @@
           <div class="iq-card iq-realease">
             <div class="iq-card-header">
               <div class="iq-header-title">
-                <h4 class="card-title">New Realeases</h4>
+                <h4 class="card-title">New Release</h4>
               </div>
             </div>
             <div class="iq-card-body iq-realeses-back">
@@ -130,6 +130,9 @@ export default {
 }
 .iq-card-header{
   padding: 20px;
+}
+.card-title{
+  font-weight: 700;
 }
 .card img{
   border-top-left-radius: 0;

@@ -2,6 +2,7 @@
   <div>
     <front-my-navbar/>
     <Nuxt />
+    <front-my-footer/>
   </div>
 </template>
 
