@@ -74,5 +74,64 @@
   --iq-color20: #a0746b;
 
 }
+.content-page{
+  overflow: hidden;
+  padding: 20px 15px 73px;
+  min-height: 100vh;
+  margin-bottom: 100px;
+}
+.iq-card{
+  background: var(--iq-light-card);
+  border-radius: 15px;
+  margin-bottom: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border: none;
+  box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1);
+}
+[class^="hvr-"] {
+  margin: .4em;
+  padding: 0.5em;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: var(--iq-border-radius);
+  border: none;
+  color: var(--iq-title-text);
+}
+.hvr-shutter-out-horizontal {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  transition-property: color;
+  transition-duration: 0.3s;
+}
+.hvr-shutter-out-horizontal:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: var(--iq-border-radius);
+  background: var(--iq-primary);
+  transform: scaleX(0);
+  transform-origin: 50%;
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+.hvr-shutter-out-horizontal:hover,
+.hvr-shutter-out-horizontal:focus,
+.hvr-shutter-out-horizontal:active {
+  color: white;
+}
+.hvr-shutter-out-horizontal:hover:before,
+.hvr-shutter-out-horizontal:focus:before,
+.hvr-shutter-out-horizontal:active:before {
+  transform: scaleX(1);
+}
 
  </style>

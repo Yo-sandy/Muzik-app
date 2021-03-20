@@ -9,7 +9,7 @@
             </div>
             <div class="d-flex iq-view">
               <b class="text-primary">
-                <nuxt-link to="#" class="text-decoration-none">View More <i class="fas fa-angle-right"></i></nuxt-link>
+                <nuxt-link to="/song-list" class="text-decoration-none">View More <i class="fas fa-angle-right"></i></nuxt-link>
               </b>
             </div>
           </div>

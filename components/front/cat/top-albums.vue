@@ -3,7 +3,7 @@
     <div class="iq-card">
       <div class="iq-card-header">
         <div class="iq-header-title">
-          <h4 class="card-title">Featured Albums</h4>
+          <h4 class="card-title">Top Albums</h4>
         </div>
         <div class="d-flex iq-view">
           <b class="text-primary">
@@ -14,25 +14,25 @@
       <div class="iq-card-body">
         <div class="row">
           <div class="col-lg-2 col-md-3 col-sm-6 col-12 mb-2 iq-music-box"
-               v-for="i in 6"
+               v-for="i in 12"
                :key="i"
                aria-hidden="false">
             <div class="card">
               <div class="iq-thumb">
                 <div class="iq-music-overlay"></div>
                 <nuxt-link to="#" >
-                  <img src="/05.png" alt="" class="card-img-top">
+                  <img src="/07.png" alt="" class="card-img-top">
                 </nuxt-link>
-                <nuxt-link to="#" class=" play-btn">
+                <nuxt-link to="/song-details" class=" play-btn">
                   <i class="far fa-play-circle"></i>
                 </nuxt-link>
               </div>
               <div class="card-body text-center">
-                <nuxt-link to="/single-albums" class="single-link">
-                  Pop Smoke
+                <nuxt-link to="/single-albums">
+                  God Whispered
                 </nuxt-link>
                 <p class="text-center">
-                  Justin Bieber
+                  Amber Mark
                 </p>
               </div>
             </div>
@@ -45,7 +45,7 @@
 
 <script>
 export default {
-name: "featured-albums"
+  name: "top-songs"
 }
 </script>
 
@@ -91,10 +91,9 @@ name: "featured-albums"
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
 }
-.card .single-link{
-  font-weight: 600;
+.card-body a{
   text-decoration: none;
-  margin: 0px;
+  font-weight: 600;
   font-size: 1.400em;
   color: var(--iq-black);
 }

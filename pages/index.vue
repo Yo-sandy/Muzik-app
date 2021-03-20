@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import Latest from "@/pages/latest";
-import Albums from "@/pages/albums";
+import Latest from "@/pages/navbar-pages/latest";
+import Albums from "@/pages/navbar-pages/albums";
 export default {
   components: {Albums, Latest},
   layout:"default"

@@ -274,7 +274,7 @@
             </li>
           </ul>
         </div>
-        <front-cat-top-songs/>
+        <front-cat-top-albums/>
       </div>
     </div>
 </template>

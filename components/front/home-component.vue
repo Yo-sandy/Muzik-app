@@ -5,7 +5,7 @@
           <div class="iq-card iq-realease">
             <div class="iq-card-header">
               <div class="iq-header-title">
-                <h4 class="card-title">New Release</h4>
+                <h4 class="card-title">New Releases</h4>
               </div>
             </div>
             <div class="iq-card-body iq-realeses-back">
@@ -211,7 +211,8 @@ export default {
   justify-content: center;
   padding: 5px 0;
   position: relative;
-  z-index: 1;}
+  z-index: 1;
+}
 .details1 {
   display: flex;
   align-items: center;

@@ -7,7 +7,7 @@
         </div>
         <div class="d-flex iq-view">
           <b class="text-primary">
-            <nuxt-link to="#" class="text-decoration-none">View More <i class="fas fa-angle-right"></i></nuxt-link>
+            <nuxt-link to="/song-list" class="text-decoration-none">View More <i class="fas fa-angle-right"></i></nuxt-link>
           </b>
         </div>
       </div>
@@ -23,14 +23,14 @@
                 <nuxt-link to="#" >
                   <img src="/06.png" alt="" class="card-img-top">
                 </nuxt-link>
-                <nuxt-link to="#" class=" play-btn">
+                <nuxt-link to="/song-details" class=" play-btn">
                   <i class="far fa-play-circle"></i>
                 </nuxt-link>
               </div>
-              <div class="card-body">
-                <h5 class="text-center">
+              <div class="card-body text-center">
+                <nuxt-link to="/song-details" class="single-link">
                   All Black
-                </h5>
+                </nuxt-link>
                 <p class="text-center">
                   Sukh E
                 </p>
@@ -92,8 +92,9 @@ name: "popular-hindi-song"
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
 }
-.card h5{
+.card .single-link{
   font-weight: 600;
+  text-decoration: none;
   margin: 0px;
   font-size: 1.400em;
   color: var(--iq-black);

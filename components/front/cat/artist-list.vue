@@ -56,15 +56,7 @@ name: "artist-list"
 .col-lg-12 .iq-card-body {
   padding: 20px;
 }
-.iq-card{
-  background: var(--iq-light-card);
-  border-radius: 15px;
-  margin-bottom: 30px;
-  margin-left: 15px;
-  margin-right: 15px;
-  border: none;
-  box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1);
-}
+
 .iq-card-header{
   padding: 20px;
   align-items: center!important;
