@@ -27,10 +27,10 @@
                   <i class="far fa-play-circle"></i>
                 </nuxt-link>
               </div>
-              <div class="card-body">
-                <h5 class="text-center">
+              <div class="card-body text-center">
+                <nuxt-link to="/song-list">
                   Babu maan
-                </h5>
+                </nuxt-link>
               </div>
             </div>
           </div>
@@ -82,9 +82,9 @@ name: "artist-list"
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
 }
-.card h5{
+.card-body a{
+  text-decoration: none;
   font-weight: 600;
-  margin: 0px;
   font-size: 1.400em;
   color: var(--iq-black);
 }
