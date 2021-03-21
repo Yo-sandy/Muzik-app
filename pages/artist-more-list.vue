@@ -3,20 +3,13 @@
     <div class="iq-card">
       <div class="iq-card-header">
         <div class="iq-header-title">
-          <h4 class="card-title">Artist List</h4>
-        </div>
-        <div class="d-flex iq-view">
-          <b class="text-primary">
-            <nuxt-link to="/artist-more-list" class="text-decoration-none">View More
-              <i class="fas fa-angle-right"></i>
-            </nuxt-link>
-          </b>
+          <h4 class="card-title text-center">Artist List</h4>
         </div>
       </div>
       <div class="iq-card-body">
         <div class="row">
           <div class="col-lg-2 col-md-3 col-sm-6 col-12 mb-2 iq-music-box artist-list"
-               v-for="i in 12"
+               v-for="i in 24"
                :key="i"
                aria-hidden="false">
             <div class="card">
@@ -31,8 +24,11 @@
               </div>
               <div class="card-body text-center">
                 <nuxt-link to="/song-list">
-                  Babu maan
+                  Get Sleepy
                 </nuxt-link>
+                <p>
+                  Babu Maan
+                </p>
               </div>
             </div>
           </div>
@@ -44,7 +40,7 @@
 
 <script>
 export default {
-name: "artist-list"
+  name: "artist-list"
 }
 </script>
 <style scoped>
@@ -61,10 +57,7 @@ name: "artist-list"
 
 .iq-card-header{
   padding: 20px;
-  align-items: center!important;
   border-bottom: 1px solid var(--iq-border-light);
-  justify-content: space-between !important;
-  display: flex;
 }
 .card-title{
   font-weight: 700;
@@ -77,11 +70,6 @@ name: "artist-list"
   margin-bottom: 10px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 15px;
-}
-.card img{
-  border-top-left-radius: 0;
-  border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
 }
 .card-body a{

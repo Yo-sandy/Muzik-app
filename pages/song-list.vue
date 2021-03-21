@@ -5,7 +5,7 @@
          <div class="row">
            <h2 class="text-center trending-song">Trending Songs</h2>
            <hr>
-           <div class="col-lg-4" v-for="i in 15" :key="i" aria-hidden="false">
+           <div class="col-lg-4" v-for="i in 15" :key="i"  >
              <div class="player2">
                <img src="/headphone-img-2.png" class="img-border-radius">
                <div>
@@ -15,7 +15,18 @@
                <span class="mb-0 col-md-2 iq-m-time" >5:45</span>
                <p> <i class="far fa-star"></i></p>
                <p><i class="far fa-play-circle"></i></p>
-               <p class="primary-color"><i class="fas fa-ellipsis-v"></i></p>
+               <div class="iq-card-header-toolbar iq-music-drop d-flex align-items-center col-md-1">
+                 <div class="dropdown show">
+                   <span class="dropdown-toggle"  data-toggle="dropdown" aria-expanded="true" role="button">
+                     <i class="ri-more-2-fill text-primary"></i>
+                   </span>
+                   <div class="dropdown-menu dropdown-menu-right show" aria-labelledby="dropdownMenuButton8" style="position: absolute; transform: translate3d(-138px, 26px, 0px); top: 0px; left: 0px; will-change: transform;" x-placement="bottom-end">
+                     <a class="dropdown-item" href="#" tabindex="0"><i class="ri-eye-fill mr-2"></i>View</a>
+                     <a class="dropdown-item" href="#" tabindex="0"><i class="ri-delete-bin-6-fill mr-2"></i>Delete</a>
+                     <a class="dropdown-item" href="#" tabindex="0"><i class="ri-file-download-fill mr-2"></i>Download</a>
+                   </div>
+                 </div>
+               </div>
              </div>
            </div>
          </div>
@@ -68,7 +79,7 @@ name: "trending-more-list"
   justify-content:space-between;
   padding: 5px 0;
   position: relative;
-  z-index: 1;
+  z-index: 0;
 }
 .player2 p{
   font-size: 32px;

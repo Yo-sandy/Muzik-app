@@ -10,87 +10,64 @@
             </div>
             <div class="iq-card-body iq-realeses-back">
               <div class="row">
-                 <div class="col-lg-5 iq-realese-box">
-                    <div class="iq-music-img">
-                        <div class="equalizer">
-                           <span class="bar bar-1"></span>
-                           <span class="bar bar-2"></span>
-                           <span class="bar bar-3"></span>
-                           <span class="bar bar-4"></span>
-                           <span class="bar bar-5"></span>
-                        </div>
+                <div class="col-lg-5 iq-realese-box">
+                  <div class="iq-music-img">
+                    <div class="equalizer">
+                      <span class="bar bar-1"></span>
+                      <span class="bar bar-2"></span>
+                      <span class="bar bar-3"></span>
+                      <span class="bar bar-4"></span>
+                      <span class="bar bar-5"></span>
+                    </div>
                     </div>
                     <div class="player1 row">
                       <div class="details1 music-list col-6 col-sm-6 col-lg-6">
-                         <div class="track-art1" style="background-image: url('/headphone-img.png')"></div>
+                        <div class="track-art1" style="background-image: url('/headphone-img.png')"></div>
                          <div>
-                            <div class="track-name1">Pop Smoke</div>
-                            <div class="track-artist1">Cascada</div>
+                           <div class="track-name1">Pop Smoke</div>
+                           <div class="track-artist1">Cascada</div>
                          </div>
                       </div>
                       <div class="buttons1 col-6 col-sm-2 col-lg-3">
-                        <div class="prev-track1"><i class="fas fa-step-backward fa-2x"></i></div>
-                        <div class="playpause-track1" ><i class="fas fa-play-circle fa-3x"></i></div>
-                        <div class="next-track1" ><i class="fas fa-step-forward fa-2x"></i></div>
+                        <div class="prev-track1">
+                          <i class="fas fa-step-backward fa-2x"></i>
+                        </div>
+                        <div class="playpause-track1" >
+                          <i class="fas fa-play-circle fa-3x"></i>
+                        </div>
+                        <div class="next-track1" >
+                          <i class="fas fa-step-forward fa-2x"></i>
+                        </div>
                       </div>
                     </div>
-                 </div>
+                </div>
                 <div class="col-lg-7" style="padding-top: 20px">
-                    <div class="player2">
-                      <img src="/headphone-img-2.png" class="img-border-radius">
-                      <div>
-                        <div class="track-name1">Pop Smoke</div>
-                        <div class="track-artist1">Cascada</div>
-                      </div>
-                      <span class="mb-0 col-md-2 iq-m-time" style="color: var(--iq-white)">5:45</span>
-                      <p> <i class="far fa-star"></i></p>
-                      <p><i class="far fa-play-circle"></i></p>
-                      <p class="primary-color"><i class="fas fa-ellipsis-v"></i></p>
+                  <div class="player2" v-for="i in 5" :key="i">
+                    <img src="/headphone-img-2.png" class="img-border-radius">
+                    <div>
+                      <div class="track-name1">Pop Smoke</div>
+                      <div class="track-artist1">Cascada</div>
                     </div>
-                    <div class="player2">
-                      <img src="/headphone-img-2.png" class="img-border-radius">
-                      <div>
-                        <div class="track-name1">Pop Smoke</div>
-                        <div class="track-artist1">Cascada</div>
-                      </div>
-                      <span class="mb-0 col-md-2 iq-m-time" style="color: var(--iq-white)">5:45</span>
-                      <p> <i class="far fa-star"></i></p>
+                    <span class="mb-0 col-md-2 iq-m-time" style="color: var(--iq-white)">5:45</span>
+                      <p><i class="far fa-star"></i></p>
                       <p><i class="far fa-play-circle"></i></p>
-                      <p class="primary-color"><i class="fas fa-ellipsis-v"></i></p>
-                    </div>
-                    <div class="player2">
-                      <img src="/headphone-img-2.png" class="img-border-radius">
-                      <div>
-                        <div class="track-name1">Pop Smoke</div>
-                        <div class="track-artist1">Cascada</div>
+                    <div class="dropstart">
+                      <span class="dropdown"  data-bs-toggle="dropdown" role="button">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </span>
+                      <div class="dropdown-menu">
+                        <nuxt-link to="#" class="dropdown-item">
+                          <i class="fas fa-eye text-dark me-md-2"></i>View
+                        </nuxt-link>
+                        <nuxt-link to="#" class="dropdown-item">
+                          <i class="fas fa-trash-alt text-dark me-md-2"></i> Delete
+                        </nuxt-link>
+                        <nuxt-link to="#" class="dropdown-item">
+                          <i class="fas fa-file-download text-dark me-md-2"></i> Download
+                        </nuxt-link>
                       </div>
-                      <span class="mb-0 col-md-2 iq-m-time" style="color: var(--iq-white)">5:45</span>
-                      <p> <i class="far fa-star"></i></p>
-                      <p><i class="far fa-play-circle"></i></p>
-                      <p class="primary-color"><i class="fas fa-ellipsis-v"></i></p>
                     </div>
-                    <div class="player2">
-                      <img src="/headphone-img-2.png" class="img-border-radius">
-                      <div>
-                        <div class="track-name1">Pop Smoke</div>
-                        <div class="track-artist1">Cascada</div>
-                      </div>
-                      <span class="mb-0 col-md-2 iq-m-time" style="color: var(--iq-white)">5:45</span>
-                      <p> <i class="far fa-star"></i></p>
-                      <p><i class="far fa-play-circle"></i></p>
-                      <p class="primary-color"><i class="fas fa-ellipsis-v"></i></p>
-                    </div>
-                    <div class="player2">
-                      <img src="/headphone-img-2.png" class="img-border-radius">
-                      <div>
-                        <div class="track-name1">Pop Smoke</div>
-                        <div class="track-artist1">Cascada</div>
-                      </div>
-                      <span class="mb-0 col-md-2 iq-m-time" style="color: var(--iq-white)">5:45</span>
-                      <p> <i class="far fa-star"></i></p>
-                      <p><i class="far fa-play-circle"></i></p>
-                      <p class="primary-color"><i class="fas fa-ellipsis-v"></i></p>
-                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -264,6 +241,7 @@ ul.iq-song-slide li p {
 ul.iq-song-slide li span {
   color: var(--iq-white)
 }
+
 ul.iq-song-slide li {
   padding: 10px;
   background: transparent;
@@ -286,7 +264,8 @@ ul.iq-song-slide li {
   font-size: 32px;
   color: var(--iq-white);
 }
-.player2 .primary-color{
+.dropstart i{
   color: var(--iq-primary);
 }
+
 </style>

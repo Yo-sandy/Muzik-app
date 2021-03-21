@@ -89,6 +89,11 @@
   border: none;
   box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1);
 }
+.fa-ellipsis-v{
+  color: var(--iq-primary);
+  font-size: 30px;
+  margin-bottom: 15px;
+}
 [class^="hvr-"] {
   margin: .4em;
   padding: 0.5em;
