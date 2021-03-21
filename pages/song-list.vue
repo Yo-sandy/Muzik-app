@@ -15,18 +15,7 @@
                <span class="mb-0 col-md-2 iq-m-time" >5:45</span>
                <p> <i class="far fa-star"></i></p>
                <p><i class="far fa-play-circle"></i></p>
-               <div class="iq-card-header-toolbar iq-music-drop d-flex align-items-center col-md-1">
-                 <div class="dropdown show">
-                   <span class="dropdown-toggle"  data-toggle="dropdown" aria-expanded="true" role="button">
-                     <i class="ri-more-2-fill text-primary"></i>
-                   </span>
-                   <div class="dropdown-menu dropdown-menu-right show" aria-labelledby="dropdownMenuButton8" style="position: absolute; transform: translate3d(-138px, 26px, 0px); top: 0px; left: 0px; will-change: transform;" x-placement="bottom-end">
-                     <a class="dropdown-item" href="#" tabindex="0"><i class="ri-eye-fill mr-2"></i>View</a>
-                     <a class="dropdown-item" href="#" tabindex="0"><i class="ri-delete-bin-6-fill mr-2"></i>Delete</a>
-                     <a class="dropdown-item" href="#" tabindex="0"><i class="ri-file-download-fill mr-2"></i>Download</a>
-                   </div>
-                 </div>
-               </div>
+               <dropdown-menu/>
              </div>
            </div>
          </div>
@@ -52,8 +41,10 @@
 </template>
 
 <script>
+
 export default {
-name: "trending-more-list"
+name: "trending-more-list",
+
 }
 </script>
 

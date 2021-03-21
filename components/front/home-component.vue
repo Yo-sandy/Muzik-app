@@ -20,26 +20,26 @@
                       <span class="bar bar-5"></span>
                     </div>
                     </div>
-                    <div class="player1 row">
-                      <div class="details1 music-list col-6 col-sm-6 col-lg-6">
-                        <div class="track-art1" style="background-image: url('/headphone-img.png')"></div>
-                         <div>
-                           <div class="track-name1">Pop Smoke</div>
-                           <div class="track-artist1">Cascada</div>
-                         </div>
-                      </div>
-                      <div class="buttons1 col-6 col-sm-2 col-lg-3">
-                        <div class="prev-track1">
-                          <i class="fas fa-step-backward fa-2x"></i>
-                        </div>
-                        <div class="playpause-track1" >
-                          <i class="fas fa-play-circle fa-3x"></i>
-                        </div>
-                        <div class="next-track1" >
-                          <i class="fas fa-step-forward fa-2x"></i>
-                        </div>
+                  <div class="player1 row">
+                    <div class="details1 music-list col-6 col-sm-6 col-lg-6">
+                      <div class="track-art1" style="background-image: url('/headphone-img.png')"></div>
+                      <div>
+                        <div class="track-name1">Pop Smoke</div>
+                        <div class="track-artist1">Cascada</div>
                       </div>
                     </div>
+                    <div class="buttons1 col-6 col-sm-2 col-lg-3">
+                      <div class="prev-track1">
+                        <i class="fas fa-step-backward fa-2x"></i>
+                      </div>
+                      <div class="playpause-track1" >
+                        <i class="fas fa-play-circle fa-3x"></i>
+                      </div>
+                      <div class="next-track1" >
+                        <i class="fas fa-step-forward fa-2x"></i>
+                       </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="col-lg-7" style="padding-top: 20px">
                   <div class="player2" v-for="i in 5" :key="i">
