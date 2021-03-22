@@ -62,7 +62,7 @@
                         <nuxt-link to="#" class="dropdown-item">
                           <i class="fas fa-trash-alt text-dark me-md-2"></i> Delete
                         </nuxt-link>
-                        <nuxt-link to="#" class="dropdown-item">
+                        <nuxt-link to="#" class="dropdown-item shaw">
                           <i class="fas fa-file-download text-dark me-md-2"></i> Download
                         </nuxt-link>
                       </div>
@@ -267,5 +267,9 @@ ul.iq-song-slide li {
 .dropstart i{
   color: var(--iq-primary);
 }
-
+.dropstart{
+  position: relative;
+}
+ .dropdown-menu .shaw{
+}
 </style>
