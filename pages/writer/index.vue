@@ -1,10 +1,10 @@
 <template>
-      <front-latest-component/>
+
 </template>
 
 <script>
 export default {
-name: "latest"
+  name: "index"
 }
 </script>
 

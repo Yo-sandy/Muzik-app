@@ -3,9 +3,9 @@
        <div class="iq-card p-md-3">
          <div class="col-lg-12">
          <div class="row">
-           <h2 class="text-center trending-song">Trending Songs</h2>
+           <h2 class="text-center trending-song">Song List</h2>
            <hr>
-           <div class="col-lg-4" v-for="i in 15" :key="i"  >
+           <div class="col-lg-4 songs-item" v-for="i in 15" :key="i"  >
              <div class="player2">
                <img src="/headphone-img-2.png" class="img-border-radius">
                <div>
@@ -13,9 +13,21 @@
                  <div class="track-artist1">Cascada</div>
                </div>
                <span class="mb-0 col-md-2 iq-m-time" >5:45</span>
-               <p> <i class="far fa-star"></i></p>
-               <p><i class="far fa-play-circle"></i></p>
-               <dropdown-menu/>
+               <span> <i class="far fa-star"></i></span>
+               <span><i class="far fa-play-circle"></i></span>
+               <div class="dropstart">
+                      <span class="dropdown"  data-bs-toggle="dropdown" role="button">
+                        <i class="fas fa-ellipsis-v mt-md-3"></i>
+                      </span>
+                 <div class="dropdown-menu">
+                   <nuxt-link to="/song-details" class="dropdown-item">
+                     <i class="fas fa-eye text-dark me-md-2"></i>View
+                   </nuxt-link>
+                   <nuxt-link to="#" class="dropdown-item">
+                     <i class="fas fa-file-download text-dark"></i> Download
+                   </nuxt-link>
+                 </div>
+               </div>
              </div>
            </div>
          </div>
@@ -64,22 +76,19 @@ name: "trending-more-list",
 .img-border-radius {
   border-radius: var(--iq-border-radius);
 }
+
 .player2{
   display: flex;
   align-items: center;
   justify-content:space-between;
   padding: 5px 0;
-  position: relative;
-  z-index: 0;
-}
-.player2 p{
-  font-size: 32px;
-  color: var(--iq-title-text);
-}
-.player2 .primary-color{
-  color: var(--iq-primary);
 }
 .player2 span{
-  font-size: 30px;
+  font-size: 20px;
+  color: var(--iq-title-text);
+}
+.dropstart i{
+  font-size: 20px;
+  color: var(--iq-primary);
 }
 </style>

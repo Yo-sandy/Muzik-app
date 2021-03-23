@@ -13,19 +13,31 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <nuxt-link to="/navbar-pages/home" class="nav-link">Home</nuxt-link>
+                  <nuxt-link to="/" class="nav-link">Home</nuxt-link>
                 </li>
                 <li class="nav-item">
-                  <nuxt-link to="/navbar-pages/latest" class="nav-link">Latest</nuxt-link>
+                  <nuxt-link to="/category" class="nav-link">Category</nuxt-link>
                 </li>
                 <li class="nav-item">
-                  <nuxt-link to="/navbar-pages/albums" class="nav-link">Albums</nuxt-link>
+                  <nuxt-link to="/albums" class="nav-link">Albums</nuxt-link>
                 </li>
                 <li class="nav-item">
-                  <nuxt-link to="/about us" class="nav-link">About</nuxt-link>
+                  <nuxt-link to="/artists" class="nav-link">Artists</nuxt-link>
                 </li>
                 <li class="nav-item">
-                  <nuxt-link to="/disclaimer" class="nav-link">Contact Us</nuxt-link>
+                  <nuxt-link to="/writer" class="nav-link">Writer</nuxt-link>
+                </li>
+                <li class="nav-item">
+                  <nuxt-link to="/label" class="nav-link">Label</nuxt-link>
+                </li>
+                <li class="nav-item">
+                  <nuxt-link to="/about-us" class="nav-link">About</nuxt-link>
+                </li>
+                <li class="nav-item">
+                  <nuxt-link to="/contact-us" class="nav-link">Contact Us</nuxt-link>
+                </li>
+                <li class="nav-item">
+                  <nuxt-link to="/disclaimer" class="nav-link">Disclaimer</nuxt-link>
                 </li>
               </ul>
               <form class="search-box">

@@ -1,13 +1,12 @@
 <template>
-  <div class="col-lg-12">
-    <div class="iq-card">
+    <div class="iq-card m-0">
       <div class="iq-card-header">
         <div class="iq-header-title">
           <h4 class="card-title">Featured Albums</h4>
         </div>
         <div class="d-flex iq-view">
           <b class="text-primary">
-            <nuxt-link to="#" class="text-decoration-none">View More <i class="fas fa-angle-right"></i></nuxt-link>
+            <nuxt-link to="top-albums-more-list" class="text-decoration-none">View More <i class="fas fa-angle-right"></i></nuxt-link>
           </b>
         </div>
       </div>
@@ -40,7 +39,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -50,11 +48,8 @@ name: "featured-albums"
 </script>
 
 <style scoped>
-.col-lg-12{
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.col-lg-12 .iq-card-body {
+
+ .iq-card-body {
   padding: 20px;
 }
 .iq-card{

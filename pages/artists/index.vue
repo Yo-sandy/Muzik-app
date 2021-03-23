@@ -1,10 +1,11 @@
 <template>
-  <div class="col-lg-12">
+  <div class="content-page">
     <div class="iq-card">
       <div class="iq-card-header">
         <div class="iq-header-title">
-          <h4 class="card-title text-center">Artist List</h4>
+          <h4 class="card-title">Artist List</h4>
         </div>
+        <hr>
       </div>
       <div class="iq-card-body">
         <div class="row">
@@ -33,6 +34,22 @@
             </div>
           </div>
         </div>
+        <nav class="mt-md-4">
+          <ul class="pagination">
+            <li class="page-item">
+              <nuxt-link class="page-link" to="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </nuxt-link>
+            </li>
+            <li class="page-item d-flex">
+              <nuxt-link class="page-link" to="#" v-for="i in 10" :key="i">1</nuxt-link></li>
+            <li class="page-item">
+              <nuxt-link class="page-link" to="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </nuxt-link>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </div>
@@ -44,20 +61,12 @@ export default {
 }
 </script>
 <style scoped>
-.row{
-
-}
-.col-lg-12{
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.col-lg-12 .iq-card-body {
-  padding: 20px;
-}
 
 .iq-card-header{
   padding: 20px;
-  border-bottom: 1px solid var(--iq-border-light);
+}
+.iq-card-body{
+  padding: 20px;
 }
 .card-title{
   font-weight: 700;
@@ -125,5 +134,8 @@ export default {
 }
 .iq-thumb-artist:hover .play-btn{
   visibility: visible;
+}
+nav{
+  padding: 20px;
 }
 </style>

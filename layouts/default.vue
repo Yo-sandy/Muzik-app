@@ -76,16 +76,14 @@
 }
 .content-page{
   overflow: hidden;
-  padding: 20px 15px 73px;
+  padding: 20px 20px 73px;
   min-height: 100vh;
-  margin-bottom: 100px;
+  margin-bottom: 110px;
 }
 .iq-card{
   background: var(--iq-light-card);
   border-radius: 15px;
   margin-bottom: 30px;
-  margin-left: 15px;
-  margin-right: 15px;
   border: none;
   box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1);
 }

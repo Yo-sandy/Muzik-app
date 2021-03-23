@@ -1,10 +1,10 @@
 <template>
-        <front-home-component/>
+
 </template>
 
 <script>
 export default {
-name: "home"
+  name: "_slug"
 }
 </script>
 

@@ -23,7 +23,7 @@
                 <nuxt-link to="#" >
                   <img src="/06.png" alt="" class="card-img-top">
                 </nuxt-link>
-                <nuxt-link to="/song-details" class=" play-btn">
+                <nuxt-link to="" class=" play-btn">
                   <i class="far fa-play-circle"></i>
                 </nuxt-link>
               </div>

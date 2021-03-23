@@ -1,10 +1,10 @@
 <template>
-      <front-albums-component/>
+
 </template>
 
 <script>
 export default {
-name: "albums"
+  name: "index"
 }
 </script>
 

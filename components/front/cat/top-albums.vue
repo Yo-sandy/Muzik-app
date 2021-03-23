@@ -7,7 +7,9 @@
         </div>
         <div class="d-flex iq-view">
           <b class="text-primary">
-            <nuxt-link to="#" class="text-decoration-none">View More <i class="fas fa-angle-right"></i></nuxt-link>
+            <nuxt-link to="/albums-list" class="text-decoration-none">View More
+              <i class="fas fa-angle-right"></i>
+            </nuxt-link>
           </b>
         </div>
       </div>
@@ -23,12 +25,12 @@
                 <nuxt-link to="#" >
                   <img src="/07.png" alt="" class="card-img-top">
                 </nuxt-link>
-                <nuxt-link to="/song-details" class=" play-btn">
+                <nuxt-link to="/" class=" play-btn">
                   <i class="far fa-play-circle"></i>
                 </nuxt-link>
               </div>
               <div class="card-body text-center">
-                <nuxt-link to="/single-albums">
+                <nuxt-link to="/view-album">
                   God Whispered
                 </nuxt-link>
                 <p class="text-center">
