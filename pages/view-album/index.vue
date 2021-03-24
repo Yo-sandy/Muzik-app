@@ -7,18 +7,15 @@
           <div class="iq-card-body iq-realeses-back">
             <div class="row">
               <div class="col-lg-5" >
-                <div class="container mt-40">
-                      <div class="box14">
-                        <img src="/single-song-play.png" class="view-img w-100">
-                        <div class="box-content">
-                          <h3 class="title">Williamson</h3>
-                          <span class="post">Web Developer</span>
-                          <ul class="icon text-center">
-                            <li><a href="#"><i class="fa fa-search"></i></a></li>
-                            <li><a href="#"><i class="fa fa-link"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
+                <div class="box8">
+                  <img src="/single-song-play.png" class="view-img w-100 overflow-hidden">
+                  <h3 class="title">Williamson</h3>
+                  <div class="box-content">
+                    <ul class="icon">
+                      <li><a href="#"><i class="fa fa-search"></i> </a> </li>
+                      <li><a href="#"><i class="fa fa-link"></i> </a> </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
               <div class="col-lg-7 iq-realese-box">
@@ -296,28 +293,63 @@ ul.iq-song-slide li {
   color: var(--iq-primary);
 }
 /*=====================================Image Hover Album Details==============================*/
-/*********************** Demo - 14 *******************/
-.box14{
-  position:relative;
-  text-align: center;
+.box8 .icon,.box8 .title{
+  margin:0;
+  position:absolute
 }
-.box14:before{content:"";width:100%;height:100%;background:rgba(0,0,0,.5);position:absolute;top:0;left:0;opacity:0;transition:all .35s ease 0s}
-.box14:hover:before{opacity:1}
-.box14 img{max-height:100%;height:448px}
-.box14 .box-content{width:90%;height:90%;position:absolute;top:5%;left:5%}
-.box14 .box-content:after,.box14 .box-content:before{content:"";position:absolute;top:0;left:0;bottom:0;right:0;opacity:0;transition:all .7s ease 0s}
-.box14 .box-content:before{border-bottom:1px solid rgba(255,255,255,.5);border-top:1px solid rgba(255,255,255,.5);transform:scale(0,1);transform-origin:0 0 0}
-.box14 .box-content:after{border-left:1px solid rgba(255,255,255,.5);border-right:1px solid rgba(255,255,255,.5);transform:scale(1,0);transform-origin:100% 0 0}
-.box14:hover .box-content:after,.box14:hover .box-content:before{opacity:1;transform:scale(1);transition-delay:.15s}
-.box14 .title{font-size:21px;font-weight:700;color:#fff;margin:15px 0;opacity:0;transform:translate3d(0,-50px,0);transition:transform .5s ease 0s}
-.box14:hover .title{opacity:1;transform:translate3d(0,0,0)}
-.box14 .post{font-size:14px;color:#fff;padding:10px;background:#d79719;opacity:0;border-radius:0 19px;transform:translate3d(0,-50px,0);transition:all .7s ease 0s}
-.box14 .icon,.box15 .icon{padding:0;list-style:none}
-.box14:hover .post{opacity:1;transform:translate3d(0,0,0);transition-delay:.15s}
-.box14 .icon{width:100%;margin:0;position:absolute;bottom:-10px;left:0;opacity:0;z-index:1;transition:all .7s ease 0s}
-.box14:hover .icon{bottom:20px;opacity:1;transition-delay:.15s}
-.box14 .icon li a{display:block;width:40px;height:40px;line-height:40px;border:1px solid #fff;border-radius:0 16px;font-size:14px;color:#fff;margin-right:5px;transition:all .4s ease 0s}
-.box14 .icon li a:hover{background:#d79719;border-color:#d79719}
-@media only screen and (max-width:990px){.box14{margin-bottom:30px}
+.box8{
+  box-shadow:0 0 3px rgba(0,0,0,.3);
+  position:relative
 }
+.box8 img{
+  width:100%;
+  height:auto
+}
+.box8 .box-content{
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.6);
+  opacity:0;
+  position:absolute;
+  top:0;
+  left:0;
+  transform:perspective(400px) rotateX(-90deg);
+  transform-origin:center top 0;
+  transition:all .5s ease 0s
+}
+.box8 .icon li a,.box8 .title{
+  background:#ef4050;
+  font-size:20px;
+  color:#fff
+}
+.box8:hover .box-content{
+  opacity:1;
+  transform:perspective(400px) rotateX(0)
+}
+.box8 .title{
+  padding:5px 7px;
+  border-radius:5px;
+  font-weight:600;
+  bottom:20px;
+  left:20px;
+  transition:all .9s ease 0s
+}
+.box8:hover .title{
+  bottom:-40px
+}
+.box8 .icon{
+  list-style:none;
+  padding:0;
+  top:42%;
+  left:0;
+  right:0
+}
+.box9 .icon,.box9 .title{
+  width:100%;
+  font-size:22px
+}
+.box8 .icon li a:hover{
+  background:#fff;color:#000
+}
+
 </style>
