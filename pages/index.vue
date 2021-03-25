@@ -49,7 +49,6 @@
                     <div class="track-artist1">Cascada</div>
                   </div>
                   <span class="mb-0 col-md-2 iq-m-time">5:45</span>
-                  <span><i class="far fa-star"></i></span>
                   <span><i class="far fa-play-circle"></i></span>
                   <div class="dropstart">
                       <span class="dropdown"  data-bs-toggle="dropdown" role="button">

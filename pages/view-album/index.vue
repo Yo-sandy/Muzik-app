@@ -5,18 +5,21 @@
       <div class="col-lg-12">
         <div class="iq-card iq-realease">
           <div class="iq-card-body iq-realeses-back">
-            <div class="row">
-              <div class="col-lg-5" >
-                <div class="box8">
-                  <img src="/single-song-play.png" class="view-img w-100 overflow-hidden">
-                  <h3 class="title">Williamson</h3>
-                  <div class="box-content">
-                    <ul class="icon">
-                      <li><a href="#"><i class="fa fa-search"></i> </a> </li>
-                      <li><a href="#"><i class="fa fa-link"></i> </a> </li>
-                    </ul>
-                  </div>
-                </div>
+            <div class="row" >
+              <div class="col-lg-5">
+                 <div class="box16">
+                   <img src="/single-song-play.png">
+                   <div class="box-content">
+                     <h3 class="title">Kristiana</h3>
+                     <span class="post">Web Designer</span>
+                     <ul class="social">
+                       <li> <h3>DJ Khaled Featuring</h3> </li>
+                       <li><span>Edyta Gorniak</span></li>
+                       <li><p>389382k Views</p></li>
+                       <li><p>Song · 45 Plays</p></li>
+                     </ul>
+                 </div>
+              </div>
               </div>
               <div class="col-lg-7 iq-realese-box">
                 <div class="iq-music-img">
@@ -57,9 +60,9 @@
         <div class="iq-card p-md-3">
           <div class="col-lg-12">
             <div class="row">
-              <h2 class="text-center trending-song">Song List</h2>
+              <h2 class="text-center trending-song">Album Name</h2>
               <hr>
-              <div class=" songs-item" v-for="i in 10" :key="i">
+              <div class="col-lg-6 songs-item" v-for="i in 10" :key="i">
                 <div class="player2">
                   <div class="align-items-center d-flex ">
                    <div>
@@ -71,7 +74,6 @@
                     </div>
                   </div>
                   <span class="mb-0 col-md-2 iq-m-time" >5:45</span>
-                  <span> <i class="far fa-star"></i></span>
                   <span><nuxt-link to="#" class="far fa-play-circle text-decoration-none text-dark"></nuxt-link></span>
                   <div class="dropstart">
                       <span class="dropdown"  data-bs-toggle="dropdown" role="button">
@@ -293,63 +295,92 @@ ul.iq-song-slide li {
   color: var(--iq-primary);
 }
 /*=====================================Image Hover Album Details==============================*/
-.box8 .icon,.box8 .title{
-  margin:0;
-  position:absolute
-}
-.box8{
-  box-shadow:0 0 3px rgba(0,0,0,.3);
+
+.box16{
+  text-align:center;
+  color:#fff;
   position:relative
 }
-.box8 img{
+.box16 .box-content,.box16:after{
   width:100%;
-  height:auto
-}
-.box8 .box-content{
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,.6);
-  opacity:0;
   position:absolute;
-  top:0;
   left:0;
-  transform:perspective(400px) rotateX(-90deg);
-  transform-origin:center top 0;
-  transition:all .5s ease 0s
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
 }
-.box8 .icon li a,.box8 .title{
-  background:#ef4050;
+.box16:after{
+  content:"";
+  height:100%;
+  background:linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.08) 69%,rgba(0,0,0,.76) 100%);
+  top:0;
+  transition:all .5s ease 0s;
+  z-index: 100;
+}
+.box16 .post,.box16 .title{
+  transform:translateY(145px);
+  transition:all .4s cubic-bezier(.13,.62,.81,.91) 0s
+}
+.box16:hover:after{
+  background:linear-gradient(to bottom,rgba(0,0,0,.01) 0,rgba(0,0,0,.09) 11%,rgba(0,0,0,.12) 13%,rgba(0,0,0,.19) 20%,
+  rgba(0,0,0,.29) 28%,rgba(0,0,0,.29) 29%,rgba(0,0,0,.42) 38%,rgba(0,0,0,.46) 43%,rgba(0,0,0,.53) 47%,
+  rgba(0,0,0,.75) 69%,rgba(0,0,0,.87) 84%,rgba(0,0,0,.98) 99%,rgba(0,0,0,.94) 100%)
+}
+.box16 img{
+  max-height: 100%;
+  height: 448px;
+  object-fit: cover;
+  width: 100%;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+}
+.box16 .box-content{
+  bottom:0;
+  z-index:101
+}
+.box16 .title{
+  font-size:22px;
+  font-weight:700;
+  text-transform:uppercase;
+  margin:0 0 10px
+}
+.box16 .post{
+  display:block;
+  padding:8px 0;
+  font-size:15px
+}
+.box16 .social li a,.box17 .icon li a{
+  border-radius:50%;
   font-size:20px;
   color:#fff
 }
-.box8:hover .box-content{
-  opacity:1;
-  transform:perspective(400px) rotateX(0)
+.box16:hover .post,.box16:hover .title{
+  transform:translateY(0)
 }
-.box8 .title{
-  padding:5px 7px;
-  border-radius:5px;
-  font-weight:600;
-  bottom:20px;
-  left:20px;
-  transition:all .9s ease 0s
-}
-.box8:hover .title{
-  bottom:-40px
-}
-.box8 .icon{
+.box16 .social{
   list-style:none;
-  padding:0;
-  top:42%;
+  padding:0 0 5px;
+  margin:40px 0 0px;
+  opacity:0;
+  position:relative;
+  transform:perspective(500px) rotateX(-90deg) rotateY(0) rotateZ(0);
+  transition:all .6s cubic-bezier(0,0,.58,1) 0s
+}
+.box16:hover .social{
+  opacity:1;
+  transform:perspective(500px) rotateX(0) rotateY(0) rotateZ(0)
+}
+.box16 .social:before{
+  content:"";
+  width:100px;
+  height:2px;
+  background:#fff;
+  margin:0 auto;
+  position:absolute;
+  top:-23px;
   left:0;
   right:0
 }
-.box9 .icon,.box9 .title{
-  width:100%;
-  font-size:22px
-}
-.box8 .icon li a:hover{
-  background:#fff;color:#000
-}
+
+
 
 </style>
