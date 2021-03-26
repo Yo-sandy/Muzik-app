@@ -1,3 +1,4 @@
+require('dotenv').config()
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -39,7 +40,12 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/dotenv',
   ],
+  axios: {
+    baseURL: process.env.BASE_URL
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

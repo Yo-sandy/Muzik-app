@@ -16,7 +16,7 @@
               <div class="iq-thumb">
                 <div class="iq-music-overlay"></div>
                 <nuxt-link to="#" >
-                  <img src="/20-209506_sony-music-logo-hd-png-download.png" alt="" class="card-img-top">
+                  <img src="/20-209506_sony-music-logo-hd-png-download.png"  class="card-img-top">
                 </nuxt-link>
                 <nuxt-link to="" class=" play-btn">
                   <i class="far fa-play-circle"></i>
@@ -31,6 +31,22 @@
           </div>
         </div>
       </div>
+      <nav>
+        <ul class="pagination">
+          <li class="page-item">
+            <nuxt-link class="page-link" to="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </nuxt-link>
+          </li>
+          <li class="page-item d-flex">
+            <nuxt-link class="page-link" to="#" v-for="i in 7" :key="i">1</nuxt-link></li>
+          <li class="page-item">
+            <nuxt-link class="page-link" to="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </nuxt-link>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
 </template>
@@ -44,7 +60,8 @@ export default {
 
 <style scoped>
 .col-lg-12{
-  padding: 20px;
+  padding: 15px;
+  margin-bottom: 150px;
 }
 .col-lg-12 .iq-card-body {
   padding: 20px;
@@ -57,6 +74,10 @@ export default {
   margin-right: 15px;
   border: none;
   box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1);
+}
+.iq-card nav{
+  padding: 20px;
+  margin: 0;
 }
 .iq-card-header{
   padding: 20px;

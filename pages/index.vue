@@ -21,14 +21,14 @@
                   </div>
                 </div>
                 <div class="player1 row">
-                  <div class="details1 music-list col-6 col-sm-6 col-lg-6">
+                  <div class="details1 music-list col-5 col-sm-6 col-lg-6">
                     <div class="track-art1" style="background-image: url('/headphone-img.png')"></div>
                     <div>
                       <div class="track-name1">Pop Smoke</div>
                       <div class="track-artist1">Cascada</div>
                     </div>
                   </div>
-                  <div class="buttons1 col-6 col-sm-2 col-lg-3">
+                  <div class="buttons1 col-7 col-sm-2 col-lg-3">
                     <div class="prev-track1">
                       <i class="fas fa-step-backward fa-2x"></i>
                     </div>
@@ -193,15 +193,14 @@ export default {
   position: absolute;
   bottom: auto;
   top: -321px;
-  left: 5px; }
+  }
 .details1.music-list {
   position: relative;
   top: 0;
   bottom: 0;
-  left: 15px;
 }
 .track-art1 {
-  margin-right: 25px;
+  margin-right: 5px;
   height: 40px;
   width: 40px;
   background-image: url('/headphone-img.png');

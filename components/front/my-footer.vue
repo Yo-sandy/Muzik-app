@@ -10,15 +10,17 @@
             <div class="track-artist">Cascada</div>
           </div>
         </div>
-        <div class="slider_container slider_music col-sm-5 col-md-4 col-lg-4">
+        <div class="buttons col-5 col-sm-3 col-md-2 col-lg-2">
+          <div class="prev-track"><i class="fas fa-step-backward fa-2x"></i></div>
+          <nuxt-link to="#" class="play-track" @click="playAudio()">
+            <i class="zmdi" :class="[currentlyStopped ? 'zmdi-stop' : (currentlyPlaying ? 'far fa-pause-circle fa-3x' : 'fas fa-play-circle fa-3x')]" :key="1" ></i>
+          </nuxt-link>
+          <div class="next-track" ><i class="fas fa-step-forward fa-2x"></i></div>
+        </div>
+        <div class="slider_container slider_music col-sm-6 col-md-4 col-lg-4">
           <div class="current-time">00:00</div>
           <input type="range" min="1" max="100" value="0" class="seek_slider"/>
           <div class="total-duration">00:00</div>
-        </div>
-        <div class="buttons col-6 col-sm-3 col-md-2 col-lg-2">
-          <div class="prev-track"><i class="fas fa-step-backward fa-2x"></i></div>
-          <div class="playpause-track"><i class="fas fa-play-circle fa-3x"></i></div>
-          <div class="next-track" ><i class="fas fa-step-forward fa-2x"></i></div>
         </div>
         <div class="slider_container col-sm-6 col-md-2 col-lg-2">
           <i class="fa fa-volume-down"></i>
@@ -33,7 +35,12 @@
 
 <script>
 export default {
-name: "my-footer"
+name: "my-footer",
+  data(){
+    return{
+
+    }
+  }
 }
 </script>
 
@@ -84,12 +91,12 @@ name: "my-footer"
   align-items: center;
   margin: 0 auto;
 }
-.playpause-track, .prev-track, .next-track {
+.play-track, .prev-track, .next-track {
   padding: 0 15px;
   color: var(--iq-white);
   transition: opacity .2s;
 }
-.playpause-track:hover, .prev-track:hover, .next-track:hover {
+.play-track:hover, .prev-track:hover, .next-track:hover {
   opacity: 1.0;
 }
 .slider_container {
