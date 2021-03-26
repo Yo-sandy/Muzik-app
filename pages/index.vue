@@ -42,7 +42,7 @@
                 </div>
               </div>
               <div class="col-lg-7 songs-item" style="padding-top: 30px">
-                <div class="player2" v-for="i in 5" :key="i">
+                <div class="player2" v-for="song in songs" >
                   <img src="/headphone-img-2.png" class="img-border-radius">
                   <div>
                     <div class="track-name1">Pop Smoke</div>

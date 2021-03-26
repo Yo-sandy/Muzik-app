@@ -12,9 +12,8 @@
         </div>
         <div class="buttons col-5 col-sm-3 col-md-2 col-lg-2">
           <div class="prev-track"><i class="fas fa-step-backward fa-2x"></i></div>
-          <nuxt-link to="#" class="play-track" @click="playAudio()">
-            <i class="zmdi" :class="[currentlyStopped ? 'zmdi-stop' : (currentlyPlaying ? 'far fa-pause-circle fa-3x' : 'fas fa-play-circle fa-3x')]" :key="1" ></i>
-          </nuxt-link>
+          <button class="play" v-if="!isplaying"><i class="far fa-pause-circle fa-3x"></i></button>
+          <button class="pause" v-else><i class="fas fa-play-circle fa-3x"></i></button>
           <div class="next-track" ><i class="fas fa-step-forward fa-2x"></i></div>
         </div>
         <div class="slider_container slider_music col-sm-6 col-md-4 col-lg-4">
@@ -32,6 +31,7 @@
   </div>
 </div>
 </template>
+
 
 <script>
 export default {
