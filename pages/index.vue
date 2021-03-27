@@ -41,13 +41,25 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-7 songs-item" style="padding-top: 30px">
-                <div class="player2" v-for="song in songs" >
-                  <img src="/headphone-img-2.png" class="img-border-radius">
-                  <div>
-                    <div class="track-name1">Pop Smoke</div>
-                    <div class="track-artist1">Cascada</div>
-                  </div>
+              <div class="col-lg-7 songs-item scrollbar" style="padding-top: 30px;height: 410px;" id="style-2">
+                <div class="player2" v-for="single_song in songs.data" :key="single_song.id" >
+                  <div class="align-items-center d-flex">
+                    <div class="iq-thumb-hotsong">
+                      <div class="iq-music-overlay"></div>
+                      <nuxt-link to="#">
+                        <img src="/headphone-img-2.png" class="img-fluid avatar-60">
+                      </nuxt-link>
+                      <div class="overlay-music-icon">
+                        <nuxt-link to="#">
+                          <i class="far fa-play-circle"></i>
+                        </nuxt-link>
+                      </div>
+                    </div>
+                   <div class="ms-1" style="width: 200px">
+                     <div class="track-name1">{{single_song.song_name}}</div>
+                     <div class="track-artist1">{{single_song.artists}}</div>
+                   </div>
+                 </div>
                   <span class="mb-0 col-md-2 iq-m-time">5:45</span>
                   <span><i class="far fa-play-circle"></i></span>
                   <div class="dropstart">
@@ -77,7 +89,22 @@
 
 <script>
 export default {
-  name: "home-component"
+  name: "home-component",
+  data(){
+    return{
+      songs: [],
+    }
+  },
+  mounted() {
+    this.getSongs();
+},
+  methods:{
+     async getSongs(){
+      const url = "all-songs";
+      const {data} = await this.$axios.get(url);
+      this.songs = data;
+    }
+  }
 }
 </script>
 
@@ -249,7 +276,6 @@ ul.iq-song-slide li {
   border-radius: var(--iq-border-radius);
 }
 
-
 .songs-item{
   position: relative;
   z-index: 1;
@@ -267,5 +293,36 @@ ul.iq-song-slide li {
 .dropstart i{
   font-size: 20px;
   color: var(--iq-primary);
+}
+/*============================================Scroll css =======================================================*/
+.scrollbar {
+  overflow-y: scroll;
+  margin-bottom: 25px;
+  scrollbar-color: #D62929 white;
+  scrollbar-width: thin;
+}
+
+#style-2::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+
+}
+
+#style-2::-webkit-scrollbar
+{
+  width: 12px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+#style-2::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #D62929;
 }
 </style>

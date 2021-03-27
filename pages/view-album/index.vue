@@ -65,13 +65,13 @@
               <div class="col-lg-6 songs-item" v-for="i in 10" :key="i">
                 <div class="player2">
                   <div class="align-items-center d-flex ">
-                   <div>
-                     <img src="/headphone-img-2.png" class="img-border-radius">
-                   </div>
-                    <div class="ms-2">
-                      <div class="track-name1">Pop Smoke</div>
-                      <div class="track-artist1">Cascada</div>
-                    </div>
+                     <div>
+                       <img src="/headphone-img-2.png" class="img-border-radius">
+                     </div>
+                      <div class="ms-2">
+                        <div class="track-name1">Pop Smoke</div>
+                        <div class="track-artist1">Cascada</div>
+                      </div>
                   </div>
                   <span class="mb-0 col-md-2 iq-m-time" >5:45</span>
                   <span><nuxt-link to="#" class="far fa-play-circle text-decoration-none text-dark"></nuxt-link></span>

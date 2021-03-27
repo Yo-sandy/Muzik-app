@@ -44,15 +44,13 @@ export default {
     '@nuxtjs/dotenv',
   ],
   axios: {
-    baseURL: process.env.BASE_URL
+    baseURL: process.env.BASE_URL,
   },
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  },
-
   server: {
     host:"0.0.0.0",
     port: 8000 // default: 3000
-  }
+  },
+  // Build Configuration: https://go.nuxtjs.dev/config-build
+  build: {
+  },
 }
