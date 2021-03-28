@@ -32,8 +32,14 @@
                     <div class="prev-track1">
                       <i class="fas fa-step-backward fa-2x"></i>
                     </div>
-                    <div class="playpause-track1" >
-                      <i class="fas fa-play-circle fa-3x"></i>
+                    <div>
+                      <i class=" far fa-play-circle fa-3x text-white"
+                         v-if="!isPlaying"
+                         @click="isPlaying = !isPlaying"
+                      ></i>
+                      <i class="far fa-pause-circle fa-3x text-white"
+                         @click="isPlaying = !isPlaying"
+                         v-else></i>
                     </div>
                     <div class="next-track1" >
                       <i class="fas fa-step-forward fa-2x"></i>
@@ -91,6 +97,7 @@ export default {
   name: "home-component",
   data(){
     return{
+      isPlaying:false,
       songs: [],
     }
   },

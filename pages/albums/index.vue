@@ -28,7 +28,15 @@
               </div>
               <div class="buttons1 col-6 col-sm-2 col-lg-3">
                 <div class="prev-track1"><i class="fas fa-step-backward fa-2x"></i></div>
-                <div class="playpause-track1" ><i class="fas fa-play-circle fa-3x"></i></div>
+                <div>
+                  <i class=" far fa-play-circle fa-3x text-white"
+                     v-if="!isPlaying"
+                     @click="isPlaying = !isPlaying"
+                  ></i>
+                  <i class="far fa-pause-circle fa-3x text-white"
+                     @click="isPlaying = !isPlaying"
+                     v-else></i>
+                </div>
                 <div class="next-track1" ><i class="fas fa-step-forward fa-2x"></i></div>
               </div>
               <div class="slider_container1 col-sm-4 col-lg-4">
@@ -74,7 +82,12 @@
 
 <script>
 export default {
-  name: "albums-component"
+  name: "albums-component",
+  data(){
+    return{
+      isPlaying:false,
+    }
+  },
 }
 </script>
 
