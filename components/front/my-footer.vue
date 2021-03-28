@@ -12,8 +12,15 @@
         </div>
         <div class="buttons col-5 col-sm-3 col-md-2 col-lg-2">
           <div class="prev-track"><i class="fas fa-step-backward fa-2x"></i></div>
-<!--          <div class="play" v-if="!isplaying"><i class="far fa-pause-circle fa-3x"></i></div>-->
-<!--          <div class="pause" v-else><i class="fas fa-play-circle fa-3x"></i></div>-->
+          <div>
+            <i class=" far fa-play-circle fa-3x text-white"
+               v-if="!isPlaying"
+               @click="isPlaying = !isPlaying"
+            ></i>
+            <i class="far fa-pause-circle fa-3x text-white"
+               @click="isPlaying = !isPlaying"
+               v-else></i>
+          </div>
           <div class="next-track" ><i class="fas fa-step-forward fa-2x"></i></div>
         </div>
         <div class="slider_container slider_music col-sm-6 col-md-4 col-lg-4">
@@ -32,15 +39,17 @@
 </div>
 </template>
 
+<!-- fas fa-play-circle fa-3x -->
+<!-- far fa-pause-circle fa-3x -->
 
 <script>
 export default {
-name: "my-footer",
+  name: "my-footer",
   data(){
     return{
-
+      isPlaying:false
     }
-  }
+  },
 }
 </script>
 
@@ -133,4 +142,6 @@ i.fa-volume-down{
   padding: 10px;
   color: var(--iq-white);
 }
+/*==============================================Play Button ===================================================*/
+
 </style>

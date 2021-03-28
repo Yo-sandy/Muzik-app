@@ -50,7 +50,7 @@
                         <img src="/headphone-img-2.png" class="img-fluid avatar-60">
                       </nuxt-link>
                       <div class="overlay-music-icon">
-                        <nuxt-link to="#">
+                        <nuxt-link to="#"  >
                           <i class="far fa-play-circle"></i>
                         </nuxt-link>
                       </div>
@@ -60,8 +60,7 @@
                      <div class="track-artist1">{{single_song.artists}}</div>
                    </div>
                  </div>
-                  <span class="mb-0 col-md-2 iq-m-time">5:45</span>
-                  <span><i class="far fa-play-circle"></i></span>
+                  <span class="mb-0 col-md-2 iq-m-time" style="width: 50px">5:45</span>
                   <div class="dropstart">
                       <span class="dropdown"  data-bs-toggle="dropdown" role="button">
                         <i class="fas fa-ellipsis-v"></i>
@@ -103,8 +102,8 @@ export default {
       const url = "all-songs";
       const {data} = await this.$axios.get(url);
       this.songs = data;
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -272,9 +271,69 @@ ul.iq-song-slide li {
   cursor: pointer;
   font-weight: 600;
 }
-.img-border-radius {
-  border-radius: var(--iq-border-radius);
+/* ================================================Music img css ============================================*/
+.iq-thumb-hotsong{
+  position: relative;
+  overflow: hidden;
 }
+.mini-music-list a{
+  transition: all 0.5s ease-out 0s;
+}
+.overlay-music-icon{
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-in-out 0s;
+}
+.overlay-music-icon i{
+  font-size: 30px;
+}
+.iq-thumb-hotsong .iq-music-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0s;
+  border-radius: 0px 20px 0px 20px;
+}
+.iq-thumb-hotsong:hover .iq-music-overlay {
+  opacity: 1;
+}
+.iq-thumb-hotsong .overlay-music-icon a {
+  display: inline-block;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  line-height: 34px;
+  font-size: 30px;
+  color: var(--iq-white);
+}
+.iq-thumb-hotsong:hover .overlay-music-icon {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+.iq-thumb-hotsong img {
+  border-radius: 0px 20px 0px 20px;
+  opacity: 1;
+}
+.avatar-60 {
+  height: 60px;
+  width: 60px;
+  line-height: 60px;
+}
+/*=================================================Music img css close=======================================*/
 
 .songs-item{
   position: relative;
