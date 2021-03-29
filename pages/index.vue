@@ -50,7 +50,10 @@
               <div class="col-lg-7 songs-item scrollbar" style="padding-top: 30px;height: 410px;" id="style-2">
                 <div class="player2" v-for="single_song in songs.data" :key="single_song.id" >
                   <div class="align-items-center d-flex">
-                    <div class="iq-thumb-hotsong">
+                    <div
+                      class="iq-thumb-hotsong"
+                      @click="$store.dispatch('player/setPlayerSong', single_song);"
+                    >
                       <div class="iq-music-overlay"></div>
                       <nuxt-link to="#">
                         <img src="/headphone-img-2.png" class="img-fluid avatar-60">
