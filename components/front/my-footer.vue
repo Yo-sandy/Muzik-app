@@ -20,7 +20,7 @@
             :src="$store.state.player.song.song_file"
             @timeupdate="updateCurrentTime"
           ></audio>
-          <div class="prev-track"><i class="fas fa-step-backward fa-2x"></i></div>
+          <div class="prev-track" @click="prevTrack"><i class="fas fa-step-backward fa-2x"></i></div>
           <div>
             <i class=" far fa-play-circle fa-3x text-white"
                v-if="!$store.state.player.isPlaying"
@@ -30,7 +30,7 @@
                @click="player"
                v-else></i>
           </div>
-          <div class="next-track" ><i class="fas fa-step-forward fa-2x"></i></div>
+          <div class="next-track"  @click="nextTrack" ><i class="fas fa-step-forward fa-2x"></i></div>
         </div>
 <!--======================================== Previous Song Play Song Next Song Close ================================-->
 
@@ -78,7 +78,10 @@ export default {
       isPlaying:false,
       totalDuration:"00:00",
       totalDurationSeconds: 0,
-      currentTime:0
+      currentTime:0,
+      currentTrack: null,
+      currentTrackIndex: 0,
+      transitionName: null
     }
   },
   watch:{
@@ -121,7 +124,33 @@ export default {
       const audioPlayer = this.$refs.audioElement;
       audioPlayer.currentTime = time;
       this.currentTime = audioPlayer.currentTime
-    }
+    },
+    //=====================================================Prev Song =================================================//
+    prevTrack() {
+      this.transitionName = "scale-in";
+      this.isShowCover = false;
+      if (this.currentTrackIndex > 0) {
+        this.currentTrackIndex--;
+      } else {
+        this.currentTrackIndex = this.track.length - 1;
+      }
+      this.currentTrack = this.track[this.currentTrackIndex];
+      this.resetPlayer();
+    },
+    //=================================================Prev Song Close ===============================================//
+    //=================================================Nuxt Song =====================================================//
+    nextTrack() {
+      this.transitionName = "scale-out";
+      this.isShowCover = false;
+      if (this.currentTrackIndex < this.track.length - 1) {
+        this.currentTrackIndex++;
+      } else {
+        this.currentTrackIndex = 0;
+      }
+      this.currentTrack = this.track[this.currentTrackIndex];
+      this.resetPlayer();
+    },
+  //  ==============================================Nuxt Song Close ==================================================//
   }
 }
 </script>
@@ -199,6 +228,16 @@ input[type="range"] {
   height: 5px;
   transition: opacity .2s;
   border-radius: 10px;
+}
+.prev-track{
+  color: var(--iq-white);
+  cursor: pointer;
+  margin-right: 5px;
+}
+.next-track{
+  color: var(--iq-white);
+  cursor: pointer;
+  margin-left: 5px;
 }
 i.fa-volume-up{
   padding: 10px;
