@@ -9,7 +9,7 @@ export const state = ()=> ({
     artists: "Vikash Bagri Haryana"
   },
   isPlaying:false,
-  volume:0.5
+  volume:0.5,
 })
 
 

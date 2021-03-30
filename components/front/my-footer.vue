@@ -3,6 +3,7 @@
   <div class="row">
     <div class="col-sm col-12">
       <div class="player row">
+<!--=============================================Song Name And Artist Name===========================================-->
         <div class="details col-6 col-sm-4 col-md-4 col-lg-4">
           <div class="track-art"></div>
           <div>
@@ -10,10 +11,14 @@
             <div class="track-artist">{{ $store.state.player.song.artists }}</div>
           </div>
         </div>
+<!--============================================Song Name And Artist Name Close =====================================-->
+
+<!--============================================ Previous Song Play Song Next Song ==================================-->
         <div class="buttons col-5 col-sm-3 col-md-2 col-lg-2">
           <audio
             ref="audioElement"
             :src="$store.state.player.song.song_file"
+            @timeupdate="updateCurrentTime"
           ></audio>
           <div class="prev-track"><i class="fas fa-step-backward fa-2x"></i></div>
           <div>
@@ -27,11 +32,24 @@
           </div>
           <div class="next-track" ><i class="fas fa-step-forward fa-2x"></i></div>
         </div>
+<!--======================================== Previous Song Play Song Next Song Close ================================-->
+
+<!--======================================== Song Time And Duration =================================================-->
         <div class="slider_container slider_music col-sm-6 col-md-4 col-lg-4">
-          <div class="current-time">00:00</div>
-          <input type="range" min="1" max="300" value="200" class="seek_slider" />
-          <div class="total-duration">00:00</div>
+          <div class="current-time">{{calculateTime(currentTime)}}</div>
+          <input
+            type="range"
+            min="0"
+            :max="totalDurationSeconds"
+            :value="currentTime"
+            class="seek_slider"
+            @change="seekTo"
+          />
+          <div class="total-duration">{{calculateTime(totalDurationSeconds)}}</div>
         </div>
+<!--======================================== Song Time And Duration Close ===========================================-->
+
+<!--======================================== Audio Volume ===========================================================-->
         <div class="slider_container col-sm-6 col-md-2 col-lg-2">
           <i class="fa fa-volume-down"></i>
           <input
@@ -44,6 +62,7 @@
             @change="volumeChange"
           />
           <i class="fa fa-volume-up"></i>
+<!--======================================== Audio Volume Close =====================================================-->
         </div>
       </div>
     </div>
@@ -51,17 +70,22 @@
 </div>
 </template>
 
-<!-- fas fa-play-circle fa-3x -->
-<!-- far fa-pause-circle fa-3x -->
-
 <script>
 export default {
   name: "my-footer",
   data(){
     return{
-      isPlaying:false
+      isPlaying:false,
+      totalDuration:"00:00",
+      totalDurationSeconds: 0,
+      currentTime:0
     }
   },
+  watch:{
+    currentTime(seconds){
+    }
+  },
+
   methods:{
     player(){
       const audioPlayer = this.$refs.audioElement;
@@ -72,6 +96,8 @@ export default {
         this.$store.dispatch("player/setPlayerState", false)
         audioPlayer.pause();
       }
+      this.totalDurationSeconds = audioPlayer.duration;
+      this.currentTime = audioPlayer.currentTime
     },
     volumeChange(e){
       const audioPlayer = this.$refs.audioElement;
@@ -79,6 +105,22 @@ export default {
       audioPlayer.volume =volume ;// 0.5
       this.$store.dispatch("player/setPlayerVolume", volume)
       console.log(audioPlayer.duration)
+    },
+    calculateTime(secs){
+      const minutes = Math.floor(secs / 60);
+      const seconds = Math.floor(secs % 60);
+      const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+      return `${minutes}:${returnedSeconds}`;
+    },
+    updateCurrentTime(){
+      const audioPlayer = this.$refs.audioElement;
+      this.currentTime = audioPlayer.currentTime
+    },
+    seekTo(e){
+      const time = e.target.value;
+      const audioPlayer = this.$refs.audioElement;
+      audioPlayer.currentTime = time;
+      this.currentTime = audioPlayer.currentTime
     }
   }
 }
@@ -131,14 +173,7 @@ export default {
   align-items: center;
   margin: 0 auto;
 }
-.play-track, .prev-track, .next-track {
-  padding: 0 15px;
-  color: var(--iq-white);
-  transition: opacity .2s;
-}
-.play-track:hover, .prev-track:hover, .next-track:hover {
-  opacity: 1.0;
-}
+
 .slider_container {
   display: flex;
   justify-content: center;
@@ -151,13 +186,13 @@ export default {
 input[type="range"] {
   background: var(--iq-primary);
 }
-.seek_slider{
+ .seek_slider{
   width: 80%;
   appearance: none;
   height: 5px;
   transition: opacity .2s;
   border-radius: 10px;
-}
+ }
 .volume_slider{
   width: 60%;
   appearance: none;
@@ -173,6 +208,6 @@ i.fa-volume-down{
   padding: 10px;
   color: var(--iq-white);
 }
-/*==============================================Play Button ===================================================*/
+/*============================================== Progress Bar===================================================*/
 
 </style>

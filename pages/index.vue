@@ -367,7 +367,7 @@ ul.iq-song-slide li {
 .scrollbar {
   overflow-y: scroll;
   margin-bottom: 25px;
-  scrollbar-color: #D62929 white;
+  scrollbar-color: var(--iq-primary) white;
   scrollbar-width: thin;
 }
 
