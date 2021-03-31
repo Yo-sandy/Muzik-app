@@ -21,14 +21,14 @@
                   </div>
                 </div>
                 <div class="player1 row">
-                  <div class="details1 music-list col-5 col-sm-6 col-lg-6">
+                  <div class="details1 music-list col-6 col-sm-6 col-lg-4">
                     <div class="track-art1" style="background-image: url('/headphone-img.png')"></div>
                     <div>
                       <div class="track-name1">{{ $store.state.player.song.song_name }}</div>
                       <div class="track-artist1">{{ $store.state.player.song.artists }}</div>
                     </div>
                   </div>
-                  <div class="buttons1 col-7 col-sm-2 col-lg-3">
+                  <div class="buttons1 col-5 col-sm-2 col-lg-3">
                     <audio
                       ref="audioElement"
                       :src="$store.state.player.song.song_file"

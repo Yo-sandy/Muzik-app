@@ -14,7 +14,7 @@
 <!--============================================Song Name And Artist Name Close =====================================-->
 
 <!--============================================ Previous Song Play Song Next Song ==================================-->
-        <div class="buttons col-6 col-sm-3 col-md-2 col-lg-2">
+        <div class="buttons col-12 col-sm-3 col-md-2 col-lg-2">
           <audio
             ref="audioElement"
             :src="$store.state.player.song.song_file"
@@ -35,7 +35,7 @@
 <!--======================================== Previous Song Play Song Next Song Close ================================-->
 
 <!--======================================== Song Time And Duration =================================================-->
-        <div class="slider_container slider_music col-sm-6 col-md-4 col-lg-4">
+        <div class="slider_container slider_music col-12 col-sm-6 col-md-4 col-lg-4">
           <div class="current-time">{{calculateTime(currentTime)}}</div>
           <input
             type="range"
@@ -49,7 +49,9 @@
 <!--======================================== Song Time And Duration Close ===========================================-->
 <!--======================================== Audio Volume ===========================================================-->
           <div class="d-flex align-items-center">
-            <i class="fa fa-volume-up" @click="showVolume = !showVolume"   style="cursor: pointer"></i>
+           <div class=" volume-icon">
+             <i class="fa fa-volume-up" @click="showVolume = !showVolume"></i>
+           </div>
             <input
               type="range"
               min="0"
@@ -187,7 +189,7 @@ export default {
 }
 .details {
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 .track-art {
   margin-right: 25px;
@@ -211,7 +213,7 @@ export default {
   flex-direction: row;
   align-items: center;
   margin: 0 auto;
-  padding-left: 50px;
+  justify-content: center;
 }
 
 .slider_container {
@@ -233,14 +235,22 @@ input[type="range"] {
   transition: opacity .2s;
   border-radius: 10px;
  }
+ .volume-icon{
+   position: relative;
+   cursor: pointer;
+ }
 .volume_slider{
-  width: 60%;
+  width: 150px;
   appearance: none;
   height: 5px;
+  position: absolute;
+  right:-43px;
+  bottom: 120px;
   transition: opacity .2s;
   border-radius: 10px;
-  transform: rotate(90deg)
+  transform: rotate(270deg)
 }
+
 .prev-track{
   color: var(--iq-white);
   cursor: pointer;
