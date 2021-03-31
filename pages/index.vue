@@ -34,7 +34,7 @@
                       :src="$store.state.player.song.song_file"
                       @timeupdate="updateCurrentTime">
                     </audio>
-                    <div class="prev-track1">
+                    <div class="prev-track1" @click="prevSong">
                       <i class="fas fa-step-backward fa-2x"></i>
                     </div>
                     <div style="cursor: pointer">
@@ -46,7 +46,7 @@
                          @click="player"
                          v-else></i>
                     </div>
-                    <div class="next-track1" >
+                    <div class="next-track1"  @click="nextSong">
                       <i class="fas fa-step-forward fa-2x"></i>
                     </div>
                   </div>
@@ -57,16 +57,13 @@
                   <div class="align-items-center d-flex">
                     <div
                       class="iq-thumb-hotsong"
-                      @click="$store.dispatch('player/setPlayerSong', single_song, index);"
-                    >
+                      @click="$store.dispatch('player/setPlayerSong', single_song, index);">
                       <div class="iq-music-overlay"></div>
-                      <nuxt-link to="#">
+                      <div>
                         <img src="/headphone-img-2.png" class="img-fluid avatar-60">
-                      </nuxt-link>
+                      </div>
                       <div class="overlay-music-icon">
-                        <nuxt-link to="#"  >
                           <i class="far fa-play-circle"></i>
-                        </nuxt-link>
                       </div>
                     </div>
                    <div class="ms-1" style="width: 200px">
@@ -132,6 +129,36 @@ export default {
       const audioPlayer = this.$refs.audioElement;
       this.currentTime = audioPlayer.currentTime
     },
+    //*************************************************Prev Song *****************************************************//
+    prevSong(){
+      let value = this.$store.state.player.currentIndex
+      const songs = this.$store.state.player.songs
+
+      console.log(value)
+
+      if(value === 0) return
+
+      this.$store.dispatch(
+        'player/setPlayerSong',
+        songs[value-1]
+      )
+      this.$store.dispatch('player/setCurrentIndex', value-1)
+    },
+    //*************************************************Prev Song Close ***********************************************//
+    //*************************************************Next Song *****************************************************//
+    nextSong(){
+      let value = this.$store.state.player.currentIndex
+      const songs = this.$store.state.player.songs
+
+      if((value + 1) === songs.length) return
+
+      this.$store.dispatch(
+        'player/setPlayerSong',
+        songs[value+1]
+      )
+      this.$store.dispatch('player/setCurrentIndex', value+1)
+    },
+    //**************************************************Next Song Close ************************************************//
   },
 }
 </script>
@@ -322,6 +349,8 @@ ul.iq-song-slide li {
   transition: all 0.3s ease-in-out 0s;
 }
 .overlay-music-icon i{
+  color: var(--iq-white);
+  cursor: pointer;
   font-size: 30px;
 }
 .iq-thumb-hotsong .iq-music-overlay {

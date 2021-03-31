@@ -2,9 +2,9 @@
 <div class="iq-footer">
   <div class="row">
     <div class="col-sm col-12">
-      <div class="player row">
+      <div class="player row ">
 <!--=============================================Song Name And Artist Name===========================================-->
-        <div class="details col-6 col-sm-4 col-md-4 col-lg-4">
+        <div class="details col-12 col-sm-6 col-md-4 col-lg-4 ">
           <div class="track-art"></div>
           <div>
             <div class="track-name">{{ $store.state.player.song.song_name }}</div>
@@ -14,7 +14,7 @@
 <!--============================================Song Name And Artist Name Close =====================================-->
 
 <!--============================================ Previous Song Play Song Next Song ==================================-->
-        <div class="buttons col-5 col-sm-3 col-md-2 col-lg-2">
+        <div class="buttons col-6 col-sm-3 col-md-2 col-lg-2">
           <audio
             ref="audioElement"
             :src="$store.state.player.song.song_file"
@@ -46,22 +46,21 @@
             @change="seekTo"
           />
           <div class="total-duration">{{calculateTime(totalDurationSeconds)}}</div>
-        </div>
 <!--======================================== Song Time And Duration Close ===========================================-->
-
 <!--======================================== Audio Volume ===========================================================-->
-        <div class="slider_container col-sm-6 col-md-2 col-lg-2">
-          <i class="fa fa-volume-down"></i>
-          <input
-            type="range"
-            min="0"
-            max="1"
-            step="0.1"
-            :value="$store.state.player.volume"
-            class="volume_slider"
-            @change="volumeChange"
-          />
-          <i class="fa fa-volume-up"></i>
+          <div class="d-flex align-items-center">
+            <i class="fa fa-volume-up" @click="showVolume = !showVolume"   style="cursor: pointer"></i>
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.1"
+              :value="$store.state.player.volume"
+              class="volume_slider"
+              v-show="showVolume"
+              @change="volumeChange"
+            />
+          </div>
 <!--======================================== Audio Volume Close =====================================================-->
         </div>
       </div>
@@ -79,7 +78,7 @@ export default {
       totalDuration:"00:00",
       totalDurationSeconds: 0,
       currentTime:0,
-
+      showVolume:false,
     }
   },
   watch:{
@@ -183,7 +182,7 @@ export default {
 .player {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 10px 0;
 }
 .details {
@@ -212,6 +211,7 @@ export default {
   flex-direction: row;
   align-items: center;
   margin: 0 auto;
+  padding-left: 50px;
 }
 
 .slider_container {
@@ -239,6 +239,7 @@ input[type="range"] {
   height: 5px;
   transition: opacity .2s;
   border-radius: 10px;
+  transform: rotate(90deg)
 }
 .prev-track{
   color: var(--iq-white);
@@ -254,10 +255,7 @@ i.fa-volume-up{
   padding: 10px;
   color: var(--iq-white);
 }
-i.fa-volume-down{
-  padding: 10px;
-  color: var(--iq-white);
-}
+
 /*============================================== Progress Bar===================================================*/
 
 </style>
