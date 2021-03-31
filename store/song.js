@@ -13,7 +13,7 @@ export const mutations = {
 
 export const actions = {
   async getSongs({commit}) {
-    const data = await this.$axios.$get('all-songs')
+    const {data} = await this.$axios.$get('all-songs')
     commit("SET_SONGS",data)
   }
 }

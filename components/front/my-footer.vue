@@ -18,10 +18,10 @@
           <audio
             ref="audioElement"
             :src="$store.state.player.song.song_file"
-            @timeupdate="updateCurrentTime"
-          ></audio>
-          <div class="prev-track" @click="prevTrack"><i class="fas fa-step-backward fa-2x"></i></div>
-          <div>
+            @timeupdate="updateCurrentTime">
+          </audio>
+          <div class="prev-track" @click="prevSong"><i class="fas fa-step-backward fa-2x"></i></div>
+          <div style="cursor: pointer">
             <i class=" far fa-play-circle fa-3x text-white"
                v-if="!$store.state.player.isPlaying"
                @click="player"
@@ -30,7 +30,7 @@
                @click="player"
                v-else></i>
           </div>
-          <div class="next-track"  @click="nextTrack" ><i class="fas fa-step-forward fa-2x"></i></div>
+          <div class="next-track"  @click="nextSong" ><i class="fas fa-step-forward fa-2x"></i></div>
         </div>
 <!--======================================== Previous Song Play Song Next Song Close ================================-->
 
@@ -79,17 +79,19 @@ export default {
       totalDuration:"00:00",
       totalDurationSeconds: 0,
       currentTime:0,
-      currentTrack: null,
-      currentTrackIndex: 0,
-      transitionName: null
+
     }
   },
   watch:{
     currentTime(seconds){
     }
   },
+  mounted() {
+    this.$store.dispatch('player/getSongs')
+  },
 
   methods:{
+    //***********************************************Audio Play Pause ************************************************//
     player(){
       const audioPlayer = this.$refs.audioElement;
       if(audioPlayer.paused){
@@ -102,6 +104,8 @@ export default {
       this.totalDurationSeconds = audioPlayer.duration;
       this.currentTime = audioPlayer.currentTime
     },
+    //**************************************************Audio Play Pause *********************************************//
+    //************************************************Volume Change **************************************************//
     volumeChange(e){
       const audioPlayer = this.$refs.audioElement;
       const volume =parseFloat(e.target.value)
@@ -109,6 +113,8 @@ export default {
       this.$store.dispatch("player/setPlayerVolume", volume)
       console.log(audioPlayer.duration)
     },
+    //************************************************ Volume Change Close *******************************************//
+    //************************************************Song Time Slider ***********************************************//
     calculateTime(secs){
       const minutes = Math.floor(secs / 60);
       const seconds = Math.floor(secs % 60);
@@ -125,32 +131,37 @@ export default {
       audioPlayer.currentTime = time;
       this.currentTime = audioPlayer.currentTime
     },
-    //=====================================================Prev Song =================================================//
-    prevTrack() {
-      this.transitionName = "scale-in";
-      this.isShowCover = false;
-      if (this.currentTrackIndex > 0) {
-        this.currentTrackIndex--;
-      } else {
-        this.currentTrackIndex = this.track.length - 1;
-      }
-      this.currentTrack = this.track[this.currentTrackIndex];
-      this.resetPlayer();
-    },
-    //=================================================Prev Song Close ===============================================//
-    //=================================================Nuxt Song =====================================================//
-    nextTrack() {
-      this.transitionName = "scale-out";
-      this.isShowCover = false;
-      if (this.currentTrackIndex < this.track.length - 1) {
-        this.currentTrackIndex++;
-      } else {
-        this.currentTrackIndex = 0;
-      }
-      this.currentTrack = this.track[this.currentTrackIndex];
-      this.resetPlayer();
-    },
-  //  ==============================================Nuxt Song Close ==================================================//
+    //*************************************************Song Time Slider Close*****************************************//
+    //*************************************************Prev Song *****************************************************//
+      prevSong(){
+        let value = this.$store.state.player.currentIndex
+        const songs = this.$store.state.player.songs
+
+        console.log(value)
+
+        if(value === 0) return
+
+        this.$store.dispatch(
+          'player/setPlayerSong',
+          songs[value-1]
+        )
+        this.$store.dispatch('player/setCurrentIndex', value-1)
+      },
+    //*************************************************Prev Song Close ***********************************************//
+    //*************************************************Next Song *****************************************************//
+      nextSong(){
+        let value = this.$store.state.player.currentIndex
+        const songs = this.$store.state.player.songs
+
+        if((value + 1) === songs.length) return
+
+        this.$store.dispatch(
+        'player/setPlayerSong',
+          songs[value+1]
+      )
+        this.$store.dispatch('player/setCurrentIndex', value+1)
+      },
+  //**************************************************Next Song Close ************************************************//
   }
 }
 </script>

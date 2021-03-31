@@ -24,21 +24,26 @@
                   <div class="details1 music-list col-5 col-sm-6 col-lg-6">
                     <div class="track-art1" style="background-image: url('/headphone-img.png')"></div>
                     <div>
-                      <div class="track-name1">Pop Smoke</div>
-                      <div class="track-artist1">Cascada</div>
+                      <div class="track-name1">{{ $store.state.player.song.song_name }}</div>
+                      <div class="track-artist1">{{ $store.state.player.song.artists }}</div>
                     </div>
                   </div>
                   <div class="buttons1 col-7 col-sm-2 col-lg-3">
+                    <audio
+                      ref="audioElement"
+                      :src="$store.state.player.song.song_file"
+                      @timeupdate="updateCurrentTime">
+                    </audio>
                     <div class="prev-track1">
                       <i class="fas fa-step-backward fa-2x"></i>
                     </div>
-                    <div>
+                    <div style="cursor: pointer">
                       <i class=" far fa-play-circle fa-3x text-white"
-                         v-if="!isPlaying"
-                         @click="isPlaying = !isPlaying"
+                         v-if="!$store.state.player.isPlaying"
+                         @click="player"
                       ></i>
                       <i class="far fa-pause-circle fa-3x text-white"
-                         @click="isPlaying = !isPlaying"
+                         @click="player"
                          v-else></i>
                     </div>
                     <div class="next-track1" >
@@ -48,11 +53,11 @@
                 </div>
               </div>
               <div class="col-lg-7 songs-item scrollbar" style="padding-top: 30px;height: 410px;" id="style-2">
-                <div class="player2" v-for="single_song in songs.data" :key="single_song.id" >
+                <div class="player2" v-for="(single_song, index) in $store.state.player.songs" :key="single_song.id" >
                   <div class="align-items-center d-flex">
                     <div
                       class="iq-thumb-hotsong"
-                      @click="$store.dispatch('player/setPlayerSong', single_song);"
+                      @click="$store.dispatch('player/setPlayerSong', single_song, index);"
                     >
                       <div class="iq-music-overlay"></div>
                       <nuxt-link to="#">
@@ -112,6 +117,20 @@ export default {
       const url = "all-songs";
       const {data} = await this.$axios.get(url);
       this.songs = data;
+    },
+    player(){
+      const audioPlayer = this.$refs.audioElement;
+      if(audioPlayer.paused){
+        this.$store.dispatch("player/setPlayerState", true)
+        audioPlayer.play();
+      }else{
+        this.$store.dispatch("player/setPlayerState", false)
+        audioPlayer.pause();
+      }
+    },
+    updateCurrentTime(){
+      const audioPlayer = this.$refs.audioElement;
+      this.currentTime = audioPlayer.currentTime
     },
   },
 }
@@ -258,8 +277,9 @@ export default {
   align-items: center;
   margin: 0 auto;
 }
-.playpause-track1, .prev-track1, .next-track1 {
+.prev-track1, .next-track1 {
   padding: 0 15px;
+  cursor: pointer;
   color: var(--iq-white);
   transition: opacity .2s;
 }
