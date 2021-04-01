@@ -90,16 +90,16 @@ export default {
   },
   mounted() {
     this.$store.dispatch('player/getSongs')
-    // this.$store.watch(state => {
-    //   return this.$store.state.player.isPlaying;
-    // }, (newValue)=>{
-    //   const audioPlayer = this.$refs.audioElement;
-    //   if(newValue){
-    //     audioPlayer.play()
-    //   }else{
-    //     audioPlayer.pause()
-    //   }
-    // })
+    this.$store.watch(state => {
+        return this.$store.state.player.isPlaying;
+     }, (newValue)=>{
+       const audioPlayer = this.$refs.audioElement;
+       if(newValue){
+          audioPlayer.play()
+       }else{
+         audioPlayer.pause()
+    }
+     })
   },
 
   methods:{
