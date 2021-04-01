@@ -35,7 +35,7 @@
 <!--======================================== Previous Song Play Song Next Song Close ================================-->
 
 <!--======================================== Song Time And Duration =================================================-->
-        <div class="slider_container slider_music col-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="slider_container slider_music col-12 col-sm-12 col-md-7 col-lg-5">
           <div class="current-time">{{calculateTime(currentTime)}}</div>
           <input
             type="range"
@@ -48,7 +48,7 @@
           <div class="total-duration">{{calculateTime(totalDurationSeconds)}}</div>
 <!--======================================== Song Time And Duration Close ===========================================-->
 <!--======================================== Audio Volume ===========================================================-->
-          <div class="d-flex align-items-center">
+          <div class="   col-sm-6 col-md-4 col-lg-4 d-flex align-items-center">
            <div class=" volume-icon">
              <i class="fa fa-volume-up" @click="showVolume = !showVolume"></i>
            </div>
@@ -61,6 +61,7 @@
               class="volume_slider"
               v-show="showVolume"
               @change="volumeChange"
+              onscroll="false"
             />
           </div>
 <!--======================================== Audio Volume Close =====================================================-->
@@ -89,6 +90,16 @@ export default {
   },
   mounted() {
     this.$store.dispatch('player/getSongs')
+    // this.$store.watch(state => {
+    //   return this.$store.state.player.isPlaying;
+    // }, (newValue)=>{
+    //   const audioPlayer = this.$refs.audioElement;
+    //   if(newValue){
+    //     audioPlayer.play()
+    //   }else{
+    //     audioPlayer.pause()
+    //   }
+    // })
   },
 
   methods:{
@@ -138,8 +149,6 @@ export default {
         let value = this.$store.state.player.currentIndex
         const songs = this.$store.state.player.songs
 
-        console.log(value)
-
         if(value === 0) return
 
         this.$store.dispatch(
@@ -179,7 +188,8 @@ export default {
   z-index: 99;
   background: rgba(1, 4, 27, 0.6);
   margin: 0;
-  transition: all 0.45s ease 0s;
+  appearance: none;
+  scroll-snap-type: none;
 }
 .player {
   display: flex;
@@ -189,10 +199,17 @@ export default {
 }
 .details {
   display: flex;
-  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 600px) {
+  .details{
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+  }
 }
 .track-art {
-  margin-right: 25px;
+  margin-right: 5px;
   height: 40px;
   width: 40px;
   background-image: url('/headphone-img.png');
@@ -232,9 +249,9 @@ input[type="range"] {
   width: 80%;
   appearance: none;
   height: 5px;
-  transition: opacity .2s;
   border-radius: 10px;
  }
+ /**********************************************volume control css****************************************/
  .volume-icon{
    position: relative;
    cursor: pointer;
@@ -243,14 +260,22 @@ input[type="range"] {
   width: 150px;
   appearance: none;
   height: 5px;
-  position: absolute;
-  right:-43px;
-  bottom: 120px;
-  transition: opacity .2s;
   border-radius: 10px;
-  transform: rotate(270deg)
 }
-
+@media screen and (max-width: 600px) {
+  .volume_slider{
+    position: absolute;
+    transform: rotate(270deg);
+    right:-43px;
+    bottom: 120px;
+    z-index: 2000;
+  }
+}
+input[type=range]{
+  appearance: none!important;
+  -webkit-appearance: none!important;
+}
+/**********************************************volume control css close****************************************/
 .prev-track{
   color: var(--iq-white);
   cursor: pointer;

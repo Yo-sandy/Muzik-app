@@ -21,29 +21,24 @@
                   </div>
                 </div>
                 <div class="player1 row">
-                  <div class="details1 music-list col-6 col-sm-6 col-lg-4">
-                    <div class="track-art1" style="background-image: url('/headphone-img.png')"></div>
+                  <div class="details1 col-12">
+                    <div class="track-art1"></div>
                     <div>
                       <div class="track-name1">{{ $store.state.player.song.song_name }}</div>
                       <div class="track-artist1">{{ $store.state.player.song.artists }}</div>
                     </div>
                   </div>
-                  <div class="buttons1 col-5 col-sm-2 col-lg-3">
-                    <audio
-                      ref="audioElement"
-                      :src="$store.state.player.song.song_file"
-                      @timeupdate="updateCurrentTime">
-                    </audio>
+                  <div class="buttons1 col-12 ">
                     <div class="prev-track1" @click="prevSong">
                       <i class="fas fa-step-backward fa-2x"></i>
                     </div>
                     <div style="cursor: pointer">
                       <i class=" far fa-play-circle fa-3x text-white"
                          v-if="!$store.state.player.isPlaying"
-                         @click="player"
+                         @click="$store.dispatch('player/setPlayerState', !$store.state.player.isPlaying)"
                       ></i>
                       <i class="far fa-pause-circle fa-3x text-white"
-                         @click="player"
+                         @click="$store.dispatch('player/setPlayerState', !$store.state.player.isPlaying)"
                          v-else></i>
                     </div>
                     <div class="next-track1"  @click="nextSong">
@@ -52,7 +47,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-7 songs-item scrollbar" style="padding-top: 30px;height: 410px;" id="style-2">
+              <div class="col-lg-7 songs-item scrollbar" id="style-2">
                 <div class="player2" v-for="(single_song, index) in $store.state.player.songs" :key="single_song.id" >
                   <div class="align-items-center d-flex">
                     <div
@@ -102,7 +97,6 @@ export default {
   name: "home-component",
   data(){
     return{
-      isPlaying:false,
       songs: [],
     }
   },
@@ -115,26 +109,10 @@ export default {
       const {data} = await this.$axios.get(url);
       this.songs = data;
     },
-    player(){
-      const audioPlayer = this.$refs.audioElement;
-      if(audioPlayer.paused){
-        this.$store.dispatch("player/setPlayerState", true)
-        audioPlayer.play();
-      }else{
-        this.$store.dispatch("player/setPlayerState", false)
-        audioPlayer.pause();
-      }
-    },
-    updateCurrentTime(){
-      const audioPlayer = this.$refs.audioElement;
-      this.currentTime = audioPlayer.currentTime
-    },
     //*************************************************Prev Song *****************************************************//
     prevSong(){
       let value = this.$store.state.player.currentIndex
       const songs = this.$store.state.player.songs
-
-      console.log(value)
 
       if(value === 0) return
 
@@ -158,7 +136,7 @@ export default {
       )
       this.$store.dispatch('player/setCurrentIndex', value+1)
     },
-    //**************************************************Next Song Close ************************************************//
+    //**************************************************Next Song Close **********************************************//
   },
 }
 </script>
@@ -166,6 +144,7 @@ export default {
 <style scoped>
 .content-page{
   padding: 20px 15px 20px;
+  margin-bottom: 200px;
 }
 
 .col-lg-12{
@@ -273,14 +252,10 @@ export default {
   display: flex;
   align-items: center;
   position: absolute;
-  bottom: auto;
-  top: -321px;
+  left: 5px;
+  bottom: 360px;
   }
-.details1.music-list {
-  position: relative;
-  top: 0;
-  bottom: 0;
-}
+
 .track-art1 {
   margin-right: 5px;
   height: 40px;
@@ -300,9 +275,10 @@ export default {
 }
 .buttons1 {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 ;
+  padding: 0;
 }
 .prev-track1, .next-track1 {
   padding: 0 15px;
@@ -396,6 +372,8 @@ ul.iq-song-slide li {
 
 .songs-item{
   position: relative;
+  padding-top: 30px;
+  height: 410px;
   z-index: 1;
 }
 .player2{
@@ -419,28 +397,24 @@ ul.iq-song-slide li {
   scrollbar-color: var(--iq-primary) white;
   scrollbar-width: thin;
 }
-
 #style-2::-webkit-scrollbar-track
 {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
   -moz-border-radius: 10px;
   border-radius: 10px;
   background-color: #ffffff;
-
 }
-
 #style-2::-webkit-scrollbar
 {
   width: 12px;
   border-radius: 10px;
   -moz-border-radius: 10px;
 }
-
 #style-2::-webkit-scrollbar-thumb
 {
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-  background-color: #D62929;
+  background-color: var(--iq-primary);
 }
 </style>
