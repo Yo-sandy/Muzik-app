@@ -74,6 +74,9 @@
   --iq-color20: #a0746b;
 
 }
+.link-active-color{
+  color: var(--iq-primary)!important;
+}
 .content-page{
   overflow: hidden;
   padding: 20px 20px 73px;

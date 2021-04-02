@@ -144,7 +144,6 @@ export default {
 <style scoped>
 .content-page{
   padding: 20px 15px 20px;
-  height: 970vh;
 }
 
 .col-lg-12{

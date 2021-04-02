@@ -60,8 +60,8 @@
               :value="$store.state.player.volume"
               class="volume_slider"
               v-show="showVolume"
-              @change="volumeChange"
-              onscroll="false"
+              @input="volumeChange"
+
             />
           </div>
 <!--======================================== Audio Volume Close =====================================================-->
@@ -116,17 +116,16 @@ export default {
       this.totalDurationSeconds = audioPlayer.duration;
       this.currentTime = audioPlayer.currentTime
     },
-    //**************************************************Audio Play Pause *********************************************//
-    //************************************************Volume Change **************************************************//
+    //******************************************** Audio Play Pause Close*********************************************//
+    //*********************************************** Volume Change **************************************************//
     volumeChange(e){
       const audioPlayer = this.$refs.audioElement;
       const volume =parseFloat(e.target.value)
       audioPlayer.volume =volume ;// 0.5
       this.$store.dispatch("player/setPlayerVolume", volume)
-      console.log(audioPlayer.duration)
     },
     //************************************************ Volume Change Close *******************************************//
-    //************************************************Song Time Slider ***********************************************//
+    //*********************************************** Song Time Slider ***********************************************//
     calculateTime(secs){
       const minutes = Math.floor(secs / 60);
       const seconds = Math.floor(secs % 60);
@@ -143,8 +142,8 @@ export default {
       audioPlayer.currentTime = time;
       this.currentTime = audioPlayer.currentTime
     },
-    //*************************************************Song Time Slider Close*****************************************//
-    //*************************************************Prev Song *****************************************************//
+    //************************************************ Song Time Slider Close ****************************************//
+    //************************************************ Prev Song *****************************************************//
       prevSong(){
         let value = this.$store.state.player.currentIndex
         const songs = this.$store.state.player.songs
@@ -157,8 +156,8 @@ export default {
         )
         this.$store.dispatch('player/setCurrentIndex', value-1)
       },
-    //*************************************************Prev Song Close ***********************************************//
-    //*************************************************Next Song *****************************************************//
+    //************************************************ Prev Song Close ***********************************************//
+    //************************************************* Next Song *****************************************************//
       nextSong(){
         let value = this.$store.state.player.currentIndex
         const songs = this.$store.state.player.songs
@@ -172,6 +171,7 @@ export default {
         this.$store.dispatch('player/setCurrentIndex', value+1)
       },
   //**************************************************Next Song Close ************************************************//
+
   }
 }
 </script>
@@ -188,8 +188,7 @@ export default {
   z-index: 99;
   background: rgba(1, 4, 27, 0.6);
   margin: 0;
-  appearance: none;
-  scroll-snap-type: none;
+  touch-action: pan-x;
 }
 .player {
   display: flex;
@@ -264,16 +263,15 @@ input[type="range"] {
 }
 @media screen and (max-width: 600px) {
   .volume_slider{
-    position: absolute;
+    position: fixed;
     transform: rotate(270deg);
     right:-43px;
     bottom: 120px;
-    z-index: 2000;
+
   }
-}
-input[type=range]{
-  appearance: none!important;
-  -webkit-appearance: none!important;
+  .volume_slider:focus + *{
+    position: fixed;
+  }
 }
 /**********************************************volume control css close****************************************/
 .prev-track{
