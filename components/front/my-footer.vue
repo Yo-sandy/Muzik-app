@@ -103,7 +103,7 @@ export default {
   },
 
   methods:{
-    //***********************************************Audio Play Pause ************************************************//
+    //************************************************************************************* Audio Play Pause
     player(){
       const audioPlayer = this.$refs.audioElement;
       if(audioPlayer.paused){
@@ -116,16 +116,16 @@ export default {
       this.totalDurationSeconds = audioPlayer.duration;
       this.currentTime = audioPlayer.currentTime
     },
-    //******************************************** Audio Play Pause Close*********************************************//
-    //*********************************************** Volume Change **************************************************//
+    //************************************************************************************* Audio Play Pause Close
+    //************************************************************************************* Volume Change
     volumeChange(e){
       const audioPlayer = this.$refs.audioElement;
       const volume =parseFloat(e.target.value)
       audioPlayer.volume =volume ;// 0.5
       this.$store.dispatch("player/setPlayerVolume", volume)
     },
-    //************************************************ Volume Change Close *******************************************//
-    //*********************************************** Song Time Slider ***********************************************//
+    //************************************************************************************* Volume Change Close
+    //************************************************************************************* Song Time Slider
     calculateTime(secs){
       const minutes = Math.floor(secs / 60);
       const seconds = Math.floor(secs % 60);
@@ -142,8 +142,8 @@ export default {
       audioPlayer.currentTime = time;
       this.currentTime = audioPlayer.currentTime
     },
-    //************************************************ Song Time Slider Close ****************************************//
-    //************************************************ Prev Song *****************************************************//
+    //************************************************************************************* Song Time Slider Close
+    //************************************************************************************* Prev Song
       prevSong(){
         let value = this.$store.state.player.currentIndex
         const songs = this.$store.state.player.songs
@@ -156,8 +156,8 @@ export default {
         )
         this.$store.dispatch('player/setCurrentIndex', value-1)
       },
-    //************************************************ Prev Song Close ***********************************************//
-    //************************************************* Next Song *****************************************************//
+    //************************************************************************************ Prev Song Close
+    //************************************************************************************ Next Song
       nextSong(){
         let value = this.$store.state.player.currentIndex
         const songs = this.$store.state.player.songs
@@ -170,7 +170,7 @@ export default {
       )
         this.$store.dispatch('player/setCurrentIndex', value+1)
       },
-  //**************************************************Next Song Close ************************************************//
+  //************************************************************************************** Next Song Close
 
   }
 }
@@ -256,7 +256,7 @@ input[type="range"] {
    cursor: pointer;
  }
 .volume_slider{
-  width: 150px;
+  width: 120px;
   appearance: none;
   height: 5px;
   border-radius: 10px;
@@ -265,8 +265,8 @@ input[type="range"] {
   .volume_slider{
     position: fixed;
     transform: rotate(270deg);
-    right:-43px;
-    bottom: 120px;
+    right:-25px;
+    bottom: 100px;
 
   }
   .volume_slider:focus + *{
