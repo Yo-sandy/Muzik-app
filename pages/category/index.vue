@@ -1,7 +1,7 @@
 <template>
   <div class="overflow-hidden">
     <div class="row mt-md-3">
-      <front-cat-popular-hindi-song/>
+      <front-cat-all-category/>
     </div>
   </div>
 </template>
