@@ -79,19 +79,19 @@ export default {
     return{
       isPlaying:false,
       totalDuration:"00:00",
-      totalDurationSeconds: 0,
       currentTime:0,
+      totalDurationSeconds:0,
       showVolume:false,
     }
   },
   watch:{
     currentTime(seconds){
-    }
+    },
   },
   mounted() {
     this.$store.dispatch('player/getSongs')
     this.$store.watch(state => {
-        return this.$store.state.player.isPlaying;
+        return state.player.isPlaying;
      }, (newValue)=>{
        const audioPlayer = this.$refs.audioElement;
        if(newValue){
@@ -100,21 +100,30 @@ export default {
          audioPlayer.pause()
     }
      })
+
+
+    this.$store.watch(state => {
+      return state.player.song;
+    }, (newValue)=>{
+      this.player()
+    })
   },
 
   methods:{
     //************************************************************************************* Audio Play Pause
     player(){
       const audioPlayer = this.$refs.audioElement;
-      if(audioPlayer.paused){
-        this.$store.dispatch("player/setPlayerState", true)
-        audioPlayer.play();
-      }else{
-        this.$store.dispatch("player/setPlayerState", false)
-        audioPlayer.pause();
-      }
-      this.totalDurationSeconds = audioPlayer.duration;
+        if(audioPlayer.paused){
+          this.$store.dispatch("player/setPlayerState", true)
+          audioPlayer.play();
+        }else{
+          this.$store.dispatch("player/setPlayerState", false)
+          audioPlayer.pause();
+        }
       this.currentTime = audioPlayer.currentTime
+      setTimeout(()=>{
+        this.totalDurationSeconds = isNaN(audioPlayer.duration) ? 0 : audioPlayer.duration
+      }, 2000)
     },
     //************************************************************************************* Audio Play Pause Close
     //************************************************************************************* Volume Change

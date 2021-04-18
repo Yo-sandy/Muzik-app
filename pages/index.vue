@@ -214,8 +214,9 @@ export default {
 }
 .equalizer{
   position: relative;
-  height: 200px;
-  width: 300px;
+  bottom: 300px;
+  height: 500px;
+  width: 520px;
   margin: 0 auto;
   transform: translate(0%, 50%) scale(0.25);
 }
@@ -228,7 +229,7 @@ export default {
   background: var(--iq-white);
   transition: height 0.4s ease;
   animation: bar 0.4s 0s both alternate ease infinite;
-  border-radius: 15px;
+  border-radius: 30px;
 }
 .bar-1 { animation-delay: 0.2s; }
 .bar-2 { left: 23%; animation-delay: 0.4s; }
