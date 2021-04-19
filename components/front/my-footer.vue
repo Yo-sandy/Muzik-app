@@ -104,7 +104,8 @@ export default {
 
     this.$store.watch(state => {
       return state.player.song;
-    }, (newValue)=>{
+    }, (newValue, oldValue)=>{
+      if (Object.keys(oldValue).length === 0) return;
       this.player()
     })
   },
@@ -161,7 +162,7 @@ export default {
 
         this.$store.dispatch(
           'player/setPlayerSong',
-          songs[value-1]
+          {song:songs[value - 1], index:value-1}
         )
         this.$store.dispatch('player/setCurrentIndex', value-1)
       },
@@ -175,7 +176,7 @@ export default {
 
         this.$store.dispatch(
         'player/setPlayerSong',
-          songs[value+1]
+          {song:songs[value + 1], index:value+1}
       )
         this.$store.dispatch('player/setCurrentIndex', value+1)
       },

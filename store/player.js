@@ -15,14 +15,14 @@ export const mutations = {
   SET_SONGS(state, songs){
     state.songs = songs
   },
-  SET_PLAYER_SONG(state, song, index=0){
+  SET_PLAYER_SONG(state, payload){
     state.song = {
-      song_name: song.song_name,
-      category: song.category,
-      song_file: BASE_URL_FOR_SONG+song.song_file,
-      artists: song.artists
+      song_name: payload.song.song_name,
+      category: payload.song.category,
+      song_file: BASE_URL_FOR_SONG+payload.song.song_file,
+      artists: payload.song.artists
     }
-    state.currentIndex = index
+    state.currentIndex = payload.index
   },
   SET_PLAYER_STATE(state, isPlaying){
     state.isPlaying = isPlaying
@@ -49,12 +49,18 @@ export const actions = {
   },
   async getSongs({commit}) {
     const {data} = await this.$axios.$get('all-songs')
+    const payload = {
+      song:data[0],
+      index:0
+    }
     commit("SET_SONGS",data)
-    commit("SET_PLAYER_SONG", data[0])
+    commit("SET_PLAYER_SONG", payload)
+  },
+  async setSong({commit}, payload){
+      commit("SET_SONGS",payload)
   },
   setCurrentIndex({commit}, payload){
     commit("SET_CURRENT_INDEX", payload)
   }
 }
-
 

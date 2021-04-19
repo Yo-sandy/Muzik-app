@@ -12,9 +12,12 @@
             :data-bs-target="`#collapseExample-${index}`"
             aria-expanded="false"
             aria-controls="collapseExample"
-          >{{category.name}}</h4>
+            @click="changeViewMoreVisiblity(index)"
+          >{{category.name}}<i class="fas fa-chevron-down ps-2"></i></h4>
         </div>
-        <div class="d-flex iq-view">
+        <div class="d-md-flex iq-view d-none"
+             :id="`showViewMore-${index}`"
+        >
           <b class="text-primary">
             <nuxt-link
               to="/song-list"
@@ -26,13 +29,14 @@
       <div class="iq-card-body collapse" :class="{ 'show': !isMobileScreen}" :id="`collapseExample-${index}`" >
         <div class="row">
           <div class="card-group col-lg-2 col-md-3 col-sm-6 col-12 mb-2 iq-music-box"
-               v-for="single_song in category.songs.data"
+               v-for="(single_song, index) in category.songs.data"
                :key="single_song.id"
                aria-hidden="false"
             >
             <div class="card">
               <div class="iq-thumb"
-              @click="$store.dispatch('player/setPlayerSong', single_song)"
+              @click="$store.dispatch('player/setPlayerSong', {song:single_song, index:index});
+                      $store.dispatch('player/setSong', category.songs.data)"
               >
                 <div class="iq-music-overlay"></div>
                 <nuxt-link to="#" >
@@ -61,6 +65,11 @@
 <script>
 export default {
 name: "popular-hindi-song",
+  data(){
+    return{
+      showViewMore:false
+    }
+  },
   computed:{
     isMobileScreen(){
       if(process.client){
@@ -77,7 +86,16 @@ name: "popular-hindi-song",
   this.$store.dispatch('categories/getCategories')
   },
   methods:{
-
+    changeViewMoreVisiblity(index){
+    if(process.client){
+      const classList = document.querySelector(`#showViewMore-${index}`).classList;
+      if(classList.contains('d-none')){
+        classList.remove('d-none');
+      }else{
+        classList.add('d-none');
+      }
+    }
+  }
   }
 }
 </script>

@@ -52,7 +52,7 @@
                   <div class="align-items-center d-flex">
                     <div
                       class="iq-thumb-hotsong"
-                      @click="$store.dispatch('player/setPlayerSong', single_song, index);">
+                      @click="$store.dispatch('player/setPlayerSong', {song:single_song, index:index});">
                       <div class="iq-music-overlay"></div>
                       <div>
                         <img src="/headphone-img-2.png" class="img-fluid avatar-60">
@@ -118,7 +118,7 @@ export default {
 
       this.$store.dispatch(
         'player/setPlayerSong',
-        songs[value-1]
+        {song:songs[value - 1], index:value-1}
       )
       this.$store.dispatch('player/setCurrentIndex', value-1)
     },
@@ -132,7 +132,7 @@ export default {
 
       this.$store.dispatch(
         'player/setPlayerSong',
-        songs[value+1]
+        {song:songs[value + 1], index:value+1}
       )
       this.$store.dispatch('player/setCurrentIndex', value+1)
     },
@@ -218,6 +218,7 @@ export default {
   height: 500px;
   width: 520px;
   margin: 0 auto;
+  right: 10px;
   transform: translate(0%, 50%) scale(0.25);
 }
 .bar {
@@ -417,4 +418,11 @@ ul.iq-song-slide li {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
   background-color: var(--iq-primary);
 }
+@media screen and (max-width: 500px) {
+  .equalizer{
+    right: 30%;
+  }
+}
 </style>
+
+
