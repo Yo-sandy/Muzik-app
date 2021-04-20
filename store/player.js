@@ -63,4 +63,3 @@ export const actions = {
     commit("SET_CURRENT_INDEX", payload)
   }
 }
-
