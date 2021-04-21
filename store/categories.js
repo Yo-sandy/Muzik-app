@@ -3,6 +3,13 @@ export const state = ()=> ({
   data: []
 })
 
+export const getters = {
+  getCategoryByID :(state) => (category_slug) =>{
+    const category =  state.data.filter(category => category.slug === category_slug)[0]
+    console.log(category)
+    return category;
+  },
+}
 
 
 export const mutations = {
