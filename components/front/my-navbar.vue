@@ -19,9 +19,6 @@
                   <nuxt-link to="/category" class="nav-link">Category</nuxt-link>
                 </li>
                 <li class="nav-item">
-                  <nuxt-link to="/albums" class="nav-link">Albums</nuxt-link>
-                </li>
-                <li class="nav-item">
                   <nuxt-link to="/artists" class="nav-link">Artists</nuxt-link>
                 </li>
                 <li class="nav-item">

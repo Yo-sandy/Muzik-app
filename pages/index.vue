@@ -306,10 +306,7 @@ ul.iq-song-slide li {
   font-weight: 600;
 }
 /* ================================================Music img css ============================================*/
-.iq-thumb-hotsong{
-  position: relative;
-  overflow: hidden;
-}
+
 .mini-music-list a{
   transition: all 0.5s ease-out 0s;
 }
@@ -329,6 +326,10 @@ ul.iq-song-slide li {
   color: var(--iq-white);
   cursor: pointer;
   font-size: 30px;
+}
+.iq-thumb-hotsong{
+  position: relative;
+  overflow: hidden;
 }
 .iq-thumb-hotsong .iq-music-overlay {
   background: rgba(0, 0, 0, 0.7);

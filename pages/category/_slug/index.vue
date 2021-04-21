@@ -5,34 +5,39 @@
         <div class="row" v-if="category != undefined && Object.keys(category).length > 0">
           <h2 class="text-center trending-song">{{category.name}}</h2>
           <hr>
-          <div class="col-lg-6 songs-item"
+          <div class="col-lg-4 songs-item"
                v-for="(single_song, index) in category.songs.data"
                :key="single_song.id"
           >
-            <div class="player2">
-              <img src="/headphone-img-2.png" class="img-border-radius">
-              <div>
-                <div class="track-name1"> {{single_song.song_name}}</div>
-                <div class="track-artist1"> {{single_song.artists}}</div>
+            <div class="player2" >
+              <div class="align-items-center d-flex">
+                <div
+                  class="iq-thumb-hotsong"
+                  @click="playSong(single_song, index)">
+                  <div class="iq-music-overlay"></div>
+                  <div>
+                    <img src="/headphone-img-2.png" class="img-fluid avatar-60">
+                  </div>
+                  <div class="overlay-music-icon">
+                    <i class="far fa-play-circle"></i>
+                  </div>
+                </div>
+                <div class="ms-1" style="width: 200px">
+                  <div class="track-name1">{{single_song.song_name}}</div>
+                  <div class="track-artist1">{{single_song.artists}}</div>
+                </div>
               </div>
-              <span class="mb-0 col-md-2 iq-m-time" >5:45</span>
-              <span> <i class="far fa-star"></i></span>
-              <span>
-                   <div
-                     @click="playSong(single_song, index)"
-                     class="far fa-play-circle text-decoration-none text-dark">
-                   </div>
-              </span>
+              <span class="mb-0 col-md-2 iq-m-time" style="width: 50px">5:45</span>
               <div class="dropstart">
-                   <span class="dropdown"  data-bs-toggle="dropdown" role="button">
-                     <i class="fas fa-ellipsis-v mt-md-3"></i>
-                   </span>
+                      <span class="dropdown"  data-bs-toggle="dropdown" role="button">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </span>
                 <div class="dropdown-menu">
                   <nuxt-link to="/song-details" class="dropdown-item">
                     <i class="fas fa-eye text-dark me-md-2"></i>View
                   </nuxt-link>
                   <nuxt-link to="#" class="dropdown-item">
-                    <i class="fas fa-file-download text-dark"></i> Download
+                    <i class="fas fa-file-download text-dark me-md-2"></i> Download
                   </nuxt-link>
                 </div>
               </div>
@@ -99,9 +104,72 @@ export default {
   font-size: 14px;
   color: var(--iq-title-text);
 }
-.img-border-radius {
-  border-radius: var(--iq-border-radius);
+/* ================================================Music img css ============================================*/
+
+.mini-music-list a{
+  transition: all 0.5s ease-out 0s;
 }
+.overlay-music-icon{
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-in-out 0s;
+}
+.overlay-music-icon i{
+  color: var(--iq-white);
+  cursor: pointer;
+  font-size: 30px;
+}
+.iq-thumb-hotsong{
+  position: relative;
+  overflow: hidden;
+}
+.iq-thumb-hotsong .iq-music-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0s;
+  border-radius: 0px 20px 0px 20px;
+}
+.iq-thumb-hotsong:hover .iq-music-overlay {
+  opacity: 1;
+}
+.iq-thumb-hotsong .overlay-music-icon a {
+  display: inline-block;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  line-height: 34px;
+  font-size: 30px;
+  color: var(--iq-white);
+}
+.iq-thumb-hotsong:hover .overlay-music-icon {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+.iq-thumb-hotsong img {
+  border-radius: 0px 20px 0px 20px;
+  opacity: 1;
+}
+.avatar-60 {
+  height: 60px;
+  width: 60px;
+  line-height: 60px;
+}
+/*=================================================Music img css close=======================================*/
 
 .player2{
   display: flex;
