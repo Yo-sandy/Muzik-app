@@ -5,7 +5,7 @@
         <div class="row" v-if="category != undefined && Object.keys(category).length > 0">
           <h2 class="text-center trending-song">{{category.name}}</h2>
           <hr>
-          <div class="col-lg-4 songs-item"
+          <div class="col-lg-6 songs-item"
                v-for="(single_song, index) in category.songs.data"
                :key="single_song.id"
           >
@@ -22,12 +22,12 @@
                     <i class="far fa-play-circle"></i>
                   </div>
                 </div>
-                <div class="ms-1" style="width: 200px">
+                <div class="ms-1 song-artist">
                   <div class="track-name1">{{single_song.song_name}}</div>
                   <div class="track-artist1">{{single_song.artists}}</div>
                 </div>
               </div>
-              <span class="mb-0 col-md-2 iq-m-time" style="width: 50px">5:45</span>
+              <span class="mb-0 col-md-2 iq-m-time" style="width: 50px">{{ single_song.song_details.formated_duration }}</span>
               <div class="dropstart">
                       <span class="dropdown"  data-bs-toggle="dropdown" role="button">
                         <i class="fas fa-ellipsis-v"></i>
@@ -66,9 +66,8 @@
 </template>
 
 <script>
-
 export default {
-  name: "category-slug",
+  name: "slug",
   data(){
     return{
       category:{}
@@ -76,22 +75,51 @@ export default {
   },
   mounted() {
     this.loadData();
+    if(process.client){
+
+      window.focus();
+      window.scroll(0, 1)
+      window.scrollTo(0, 1)
+    }
   },
   methods:{
     loadData(){
       this.$store.dispatch('categories/getCategories').then(res=>{
         this.category = this.$store.getters['categories/getCategoryByID'](this.$route.params.slug)
       })
+
     },
+
     playSong(single_song, index){
       this.$store.dispatch('player/setPlayerSong', {song:single_song, index:index});
       this.$store.dispatch('player/setSong', this.category.songs.data);
-    }
-  }
+    },
+  },
+
+
 }
 </script>
 
 <style scoped>
+@media screen and (max-width: 600px){
+  .player2 .song-artist{
+    width: 200px;
+  }
+  .song-artist.track-name1 {
+    font-size: 18px;
+    line-height: 26px;
+    color: var(--iq-title-text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid #000000;
+  }
+  .song-artist .track-artist1 {
+    font-size: 14px;
+    color: var(--iq-title-text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
 .trending-song{
   font-weight: 600;
 }
@@ -173,9 +201,12 @@ export default {
 
 .player2{
   display: flex;
-  align-items: center;
+  border-bottom: 1px solid var(--iq-border-light);
   justify-content:space-between;
   padding: 5px 0;
+}
+.song-artist{
+  width: 300px;
 }
 .player2 span{
   font-size: 20px;

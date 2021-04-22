@@ -56,6 +56,6 @@ export default {
   },
 
   router:{
-    linkExactActiveClass:"link-active-color"
+    linkExactActiveClass:"link-active-color",
   }
 }

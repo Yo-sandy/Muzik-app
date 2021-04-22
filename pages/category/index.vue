@@ -63,8 +63,10 @@
 </template>
 
 <script>
+
+
 export default {
-  name: "popular-hindi-song",
+  name: "category",
   data(){
     return{
       showViewMore:false
@@ -119,7 +121,6 @@ export default {
   box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1);
 }
 .iq-card-header{
-  padding: 20px;
   align-items: center!important;
   border-bottom: 1px solid var(--iq-border-light);
   justify-content: space-between !important;

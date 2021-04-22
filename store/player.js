@@ -20,6 +20,7 @@ export const mutations = {
       song_name: payload.song.song_name,
       category: payload.song.category,
       song_file: BASE_URL_FOR_SONG+payload.song.song_file,
+      song_details:payload.song.song_details,
       artists: payload.song.artists
     }
     state.currentIndex = payload.index

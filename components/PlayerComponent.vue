@@ -2,7 +2,7 @@
   <div class="iq-footer">
     <div class="row">
       <div class="col-sm col-12">
-        <div class="player row ">
+        <div class="player row " v-if="Object.keys($store.state.player.song).length > 0">
           <!--=============================================Song Name And Artist Name===========================================-->
           <div class="details col-12 col-sm-6 col-md-4 col-lg-4 ">
             <div class="track-art"></div>
@@ -46,7 +46,7 @@
               class="seek_slider"
               @change="seekTo"
             />
-            <div class="total-duration">{{calculateTime(totalDurationSeconds)}}</div>
+            <div class="total-duration">{{$store.state.player.song.song_details.formated_duration}}</div>
             <!--======================================== Song Time And Duration Close ===========================================-->
             <!--======================================== Audio Volume ===========================================================-->
             <div class="   col-sm-6 col-md-4 col-lg-4 d-flex align-items-center">
@@ -123,9 +123,7 @@ export default {
         audioPlayer.pause();
       }
       this.currentTime = audioPlayer.currentTime
-      setTimeout(()=>{
-        this.totalDurationSeconds = isNaN(audioPlayer.duration) ? 0 : audioPlayer.duration
-      }, 2000)
+      this.totalDurationSeconds = this.$store.state.player.song.song_details.estimated_duration;
     },
     //************************************************************************************* Audio Play Pause Close
     //************************************************************************************* Volume Change
