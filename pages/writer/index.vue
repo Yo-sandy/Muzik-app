@@ -9,22 +9,18 @@
       <div class="iq-card-body">
         <div class="row">
           <div class="col-lg-2 col-md-3 col-sm-6 col-12 mb-2 iq-music-box"
-               v-for="i in 12"
-               :key="i"
+               v-for="writer in $store.state.writers.data"
+               :key="writer.id"
                aria-hidden="false">
             <div class="card">
-              <div class="iq-thumb">
-                <div class="iq-music-overlay"></div>
-                <nuxt-link to="#" >
-                  <img src="/Jaani.jpg" alt="" class="card-img-top">
-                </nuxt-link>
-                <nuxt-link to="" class=" play-btn">
-                  <i class="far fa-play-circle"></i>
-                </nuxt-link>
+              <div>
+                <img src="/Jaani.jpg" alt="" class="card-img-top">
               </div>
               <div class="card-body text-center">
-                <nuxt-link to="/song-list" class="single-link">
-                  Jaani Music
+                <nuxt-link
+                  to="#"
+                  class="single-link">
+                  {{writer.name}}
                 </nuxt-link>
               </div>
             </div>
@@ -49,11 +45,17 @@
       </nav>
     </div>
   </div>
+  <!--                  :to="{name:'writer-slug', params:{slug:writer.slug}}"-->
 </template>
 
 <script>
 export default {
-  name: "popular-hindi-song"
+  name: "writer",
+
+
+  mounted() {
+    this.$store.dispatch('writers/getWriters')
+  },
 }
 </script>
 
@@ -74,9 +76,9 @@ export default {
   border: none;
   box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1);
 }
- .iq-card nav{
-   padding: 20px;
- }
+.iq-card nav{
+  padding: 20px;
+}
 .iq-card-header{
   padding: 20px;
   align-items: center!important;
@@ -113,36 +115,5 @@ export default {
   color: var(--iq-primary);
 }
 /*=================================CARD BOX================================*/
-.iq-thumb{
-  position: relative;
-}
-.iq-music-overlay {
-  background: rgba(0, 0, 0, 0.7);
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  opacity: 0;
-  transition: all 0.4s ease-in-out 0s;
-  border-radius: 0px 15px; }
-.iq-thumb:hover .iq-music-overlay {
-  opacity: 1;
-}
 
-.play-btn{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  visibility:  hidden;
-  font-size: 40px;
-  color:var(--iq-light);
-  transition: all 0.1s ease-in-out 0.1s;
-}
-.iq-thumb:hover .play-btn{
-  visibility: visible;
-}
 </style>

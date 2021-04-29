@@ -2,11 +2,11 @@
   <div class="content-page">
     <div class="iq-card p-md-3">
       <div class="col-lg-12">
-        <div class="row" v-if="category != undefined && Object.keys(category).length > 0">
+        <div class="row" v-if="writer != undefined && Object.keys(writer).length > 0">
           <h2 class="text-center trending-song">{{category.name}}</h2>
           <hr>
           <div class="col-lg-6 songs-item"
-               v-for="(single_song, index) in category.songs.data"
+               v-for="(single_song, index) in writer.songs.data"
                :key="single_song.id"
           >
             <div class="player2" >
@@ -70,7 +70,7 @@ export default {
   name: "slug",
   data(){
     return{
-      category:{}
+      writer:{}
     }
   },
   mounted() {
@@ -84,15 +84,15 @@ export default {
   },
   methods:{
     loadData(){
-      this.$store.dispatch('categories/getCategories').then(res=>{
-        this.category = this.$store.getters['categories/getCategoryByID'](this.$route.params.slug)
+      this.$store.dispatch('writers.js/getWriter').then(res=>{
+        this.writer = this.$store.getters['writers.js/getWriterByID'](this.$route.params.slug)
       })
 
     },
 
     playSong(single_song, index){
       this.$store.dispatch('player/setPlayerSong', {song:single_song, index:index});
-      this.$store.dispatch('player/setSong', this.category.songs.data);
+      this.$store.dispatch('player/setSong', this.writer.songs.data);
     },
   },
 

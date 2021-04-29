@@ -81,8 +81,6 @@ export default {
       }
     }
   },
-  watch:{
-  },
   mounted() {
     this.$store.dispatch('categories/getCategories')
   },
