@@ -10,7 +10,7 @@
         <div class="row">
           <div class="col-lg-2 col-md-3 col-sm-6 col-12 mb-2 iq-music-box"
                v-for="writer in $store.state.writers.data"
-               :key="writer.id"
+               :key="writer.slug"
                aria-hidden="false">
             <div class="card">
               <div>
@@ -20,7 +20,7 @@
                 <nuxt-link
                   to="#"
                   class="single-link">
-                  {{writer.name}}
+                  {{writer.slug}}
                 </nuxt-link>
               </div>
             </div>
