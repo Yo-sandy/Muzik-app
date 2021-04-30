@@ -18,7 +18,9 @@
               </div>
             </div>
             <div class="card-body text-center">
-              <nuxt-link to="/song-list" >
+              <nuxt-link
+                :to="{name:'label-slug', params:{slug:label.slug}}"
+              >
                 {{label.name}}
               </nuxt-link>
             </div>
@@ -101,47 +103,14 @@ export default {
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
 }
-.card .single-link{
+.iq-card-body a{
   font-weight: 600;
   text-decoration: none;
   margin: 0px;
   font-size: 1.400em;
   color: var(--iq-black);
 }
-.text-primary a{
-  color: var(--iq-primary);
-}
-/*=================================CARD BOX================================*/
-.iq-thumb{
-  position: relative;
-}
-.iq-music-overlay {
-  background: rgba(0, 0, 0, 0.7);
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  opacity: 0;
-  transition: all 0.4s ease-in-out 0s;
-  border-radius: 0px 15px; }
-.iq-thumb:hover .iq-music-overlay {
-  opacity: 1;
-}
 
-.play-btn{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  visibility:  hidden;
-  font-size: 40px;
-  color:var(--iq-light);
-  transition: all 0.1s ease-in-out 0.1s;
-}
-.iq-thumb:hover .play-btn{
-  visibility: visible;
-}
+/*=================================CARD BOX================================*/
+
 </style>
