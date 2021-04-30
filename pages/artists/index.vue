@@ -9,27 +9,18 @@
       </div>
       <div class="iq-card-body">
         <div class="row">
-          <div class="col-lg-2 col-md-3 col-sm-6 col-12 mb-2 iq-music-box artist-list"
-               v-for="i in 24"
-               :key="i"
+          <div class="card-group col-lg-2 col-md-3 col-sm-6 col-12 mb-2 iq-music-box artist-list"
+               v-for="artist in $store.state.artists.data.data"
+               :key="artist.id"
                aria-hidden="false">
             <div class="card">
-              <div class="iq-thumb-artist">
-                <div class="iq-music-overlay"></div>
-                <nuxt-link to="#" >
-                  <img src="/01.png" alt="" class="card-img-top">
-                </nuxt-link>
-                <nuxt-link to="#" class=" play-btn">
-                  <i class="far fa-play-circle"></i>
-                </nuxt-link>
+              <div>
+                <img src="/01.png" alt="" class="card-img-top">
               </div>
               <div class="card-body text-center">
                 <nuxt-link to="/song-list">
-                  Get Sleepy
+                  {{artist.name}}
                 </nuxt-link>
-                <p>
-                  Babu Maan
-                </p>
               </div>
             </div>
           </div>
@@ -42,7 +33,7 @@
               </nuxt-link>
             </li>
             <li class="page-item d-flex">
-              <nuxt-link class="page-link" to="#" v-for="i in 10" :key="i">1</nuxt-link></li>
+              <nuxt-link class="page-link" to="#" v-for="i in 5" :key="i">1</nuxt-link></li>
             <li class="page-item">
               <nuxt-link class="page-link" to="#" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
@@ -57,7 +48,10 @@
 
 <script>
 export default {
-  name: "artist-list"
+  name: "artist-list",
+  mounted() {
+    this.$store.dispatch('artists/getArtists')
+  },
 }
 </script>
 <style scoped>
@@ -97,44 +91,12 @@ export default {
   margin-bottom: 10px;
   border: none;
 }
-.card .iq-thumb-artist img{
+.card  img{
   border-top-left-radius: 0;
   border-top-right-radius: 80px;
   border-bottom-left-radius: 80px;
 }
-.iq-thumb-artist{
-  position: relative;
-  overflow: hidden;
-}
-.iq-thumb-artist .iq-music-overlay{
-  background: rgba(0, 0, 0, 0.7);
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  opacity: 0;
-  transition: all 0.4s ease-in-out 0s;
-  border-radius: 0px 80px;
-}
-.iq-thumb-artist:hover .iq-music-overlay {
-  opacity: 1;
-}
-.play-btn{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  visibility:  hidden;
-  font-size: 40px;
-  color:var(--iq-light);
-  transition: all 0.1s ease-in-out 0.1s;
-}
-.iq-thumb-artist:hover .play-btn{
-  visibility: visible;
-}
+
 nav{
   padding: 20px;
 }

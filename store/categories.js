@@ -6,7 +6,6 @@ export const state = ()=> ({
 export const getters = {
   getCategoryByID :(state) => (category_slug) =>{
     const category =  state.data.filter(category => category.slug === category_slug)[0]
-    console.log(category)
     return category;
   },
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid">
+    <div class="container-fluid front-navbar">
       <div class="row">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid">
@@ -69,7 +69,7 @@ name: "my-navbar"
 .nav-link:hover{
   font-weight: 700;
   font-size: 17px;
-  color: var(--iq-primary) !important;
+  color: var(--iq-primary-pro) !important;
 }
 .search-input {
   width: 100%;

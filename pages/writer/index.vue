@@ -8,9 +8,9 @@
       </div>
       <div class="iq-card-body">
         <div class="row">
-          <div class="col-lg-2 col-md-3 col-sm-6 col-12 mb-2 iq-music-box"
-               v-for="writer in $store.state.writers.data"
-               :key="writer.slug"
+          <div class="card-group col-lg-2 col-md-3 col-sm-6 col-12 mb-2 iq-music-box"
+               v-for="writer in $store.state.writers.data.data"
+               :key="writer.id"
                aria-hidden="false">
             <div class="card">
               <div>
@@ -18,9 +18,8 @@
               </div>
               <div class="card-body text-center">
                 <nuxt-link
-                  to="#"
-                  class="single-link">
-                  {{writer.slug}}
+                  :to="{name:'writer-slug', params:{slug:writer.slug}}">
+                  {{writer.name}}
                 </nuxt-link>
               </div>
             </div>
@@ -45,7 +44,6 @@
       </nav>
     </div>
   </div>
-  <!--                  :to="{name:'writer-slug', params:{slug:writer.slug}}"-->
 </template>
 
 <script>
@@ -104,16 +102,14 @@ export default {
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
 }
-.card .single-link{
+.card .card-body a{
   font-weight: 600;
   text-decoration: none;
   margin: 0px;
   font-size: 1.400em;
   color: var(--iq-black);
 }
-.text-primary a{
-  color: var(--iq-primary);
-}
+
 /*=================================CARD BOX================================*/
 
 </style>

@@ -9,24 +9,18 @@
       <div class="iq-card-body">
         <div class="row">
           <div class="col-lg-2 col-md-3 col-sm-6 col-12 mb-2 iq-music-box"
-               v-for="i in 12"
-               :key="i"
+               v-for="label in $store.state.labels.data.data"
+               :key="label.id"
                aria-hidden="false">
             <div class="card">
-              <div class="iq-thumb">
-                <div class="iq-music-overlay"></div>
-                <nuxt-link to="#" >
-                  <img src="/20-209506_sony-music-logo-hd-png-download.png"  class="card-img-top">
-                </nuxt-link>
-                <nuxt-link to="" class=" play-btn">
-                  <i class="far fa-play-circle"></i>
-                </nuxt-link>
+              <div>
+                <img src="/20-209506_sony-music-logo-hd-png-download.png"  class="card-img-top">
               </div>
-              <div class="card-body text-center">
-                <nuxt-link to="/song-list" class="single-link">
-                  Sony Music
-                </nuxt-link>
-              </div>
+            </div>
+            <div class="card-body text-center">
+              <nuxt-link to="/song-list" >
+                {{label.name}}
+              </nuxt-link>
             </div>
           </div>
         </div>
@@ -53,7 +47,10 @@
 
 <script>
 export default {
-  name: "popular-hindi-song"
+  name: "labels",
+  mounted() {
+    this.$store.dispatch('labels/getLabels')
+  },
 }
 </script>
 

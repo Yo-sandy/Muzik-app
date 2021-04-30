@@ -1,14 +1,14 @@
 
 export const state = ()=> ({
-  data: []
+  data:[]
 })
 
-// export const getters = {
-//   getWriterByID :(state) => (writer_slug) =>{
-//     const writer =  state.data.filter(writer => writer.slug === writer_slug)[0]
-//     return writer;
-//   },
-// }
+  // export const getters = {
+  //   getWriterByID :(state) => (writer_slug) =>{
+  //     const writer =  state.data.filter(writer => writer.slug === writer_slug)[0]
+  //    return writer;
+  //   },
+  // }
 
 
 export const mutations = {
@@ -19,8 +19,7 @@ export const mutations = {
 
 export const actions = {
   async getWriters({commit}) {
-    const {data} = await this.$axios.get('/writers')
-    console.log(data)
+    const {data} = await this.$axios.get('/writers ')
     commit("SET_WRITERS",data)
   }
 }

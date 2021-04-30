@@ -27,11 +27,13 @@
                   <div class="track-artist1">{{single_song.artists}}</div>
                 </div>
               </div>
-              <span class="mb-0 col-md-2 iq-m-time" style="width: 50px">{{ single_song.song_details.formated_duration }}</span>
+              <span class="mb-0 col-md-2 iq-m-time" style="width: 50px">
+                {{ single_song.song_details.formated_duration }}
+              </span>
               <div class="dropstart">
-                      <span class="dropdown"  data-bs-toggle="dropdown" role="button">
-                        <i class="fas fa-ellipsis-v"></i>
-                      </span>
+                <span class="dropdown"  data-bs-toggle="dropdown" role="button">
+                  <i class="fas fa-ellipsis-v"></i>
+                </span>
                 <div class="dropdown-menu">
                   <nuxt-link to="/song-details" class="dropdown-item">
                     <i class="fas fa-eye text-dark me-md-2"></i>View

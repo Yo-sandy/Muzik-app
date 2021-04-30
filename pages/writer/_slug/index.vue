@@ -3,13 +3,13 @@
     <div class="iq-card p-md-3">
       <div class="col-lg-12">
         <div class="row" v-if="writer != undefined && Object.keys(writer).length > 0">
-          <h2 class="text-center trending-song">{{category.name}}</h2>
+          <h2 class="text-center trending-song">{{writer.name}}</h2>
           <hr>
           <div class="col-lg-6 songs-item"
                v-for="(single_song, index) in writer.songs.data"
                :key="single_song.id"
           >
-            <div class="player2" >
+            <div class="player2">
               <div class="align-items-center d-flex">
                 <div
                   class="iq-thumb-hotsong"
@@ -23,15 +23,16 @@
                   </div>
                 </div>
                 <div class="ms-1 song-artist">
-                  <div class="track-name1">{{single_song.song_name}}</div>
-                  <div class="track-artist1">{{single_song.artists}}</div>
+                  <div class="track-name1">{{single_song.title}}</div>
                 </div>
               </div>
-              <span class="mb-0 col-md-2 iq-m-time" style="width: 50px">{{ single_song.song_details.formated_duration }}</span>
+              <span class="mb-0 col-md-2 iq-m-time" style="width: 50px">
+                {{ single_song.song_details.formated_duration }}
+              </span>
               <div class="dropstart">
-                      <span class="dropdown"  data-bs-toggle="dropdown" role="button">
-                        <i class="fas fa-ellipsis-v"></i>
-                      </span>
+                <span class="dropdown"  data-bs-toggle="dropdown" role="button">
+                  <i class="fas fa-ellipsis-v"></i>
+                </span>
                 <div class="dropdown-menu">
                   <nuxt-link to="/song-details" class="dropdown-item">
                     <i class="fas fa-eye text-dark me-md-2"></i>View
@@ -85,9 +86,8 @@ export default {
   methods:{
     loadData(){
       this.$store.dispatch('writers.js/getWriter').then(res=>{
-        this.writer = this.$store.getters['writers.js/getWriterByID'](this.$route.params.slug)
+        this.writer = this.$store.getters['writers/getWriterByID'](this.$route.params.slug)
       })
-
     },
 
     playSong(single_song, index){
@@ -95,8 +95,6 @@ export default {
       this.$store.dispatch('player/setSong', this.writer.songs.data);
     },
   },
-
-
 }
 </script>
 

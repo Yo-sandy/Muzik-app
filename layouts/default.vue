@@ -20,6 +20,7 @@
   --iq-body-header:#FBFCFF;
   --iq-body-bg: #ffffff;
   --iq-primary: #ff4545;
+  --iq-primary-pro: #ff4545;
   --iq-secondary: #a09e9e;
   --iq-success: #1ee2ac;
   --iq-warning: #ffdd31;
@@ -80,8 +81,8 @@
   --iq-color20: #a0746b;
 
 }
-.link-active-color{
-  color: var(--iq-primary)!important;
+.front-navbar .link-active-color{
+  color: var(--iq-primary-pro)!important;
 }
 .content-page{
   overflow: hidden;
