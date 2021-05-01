@@ -1,0 +1,878 @@
+
+/************************************************************************************ Navbar Css */
+
+.my-navbar .container-fluid{
+  overflow: hidden;
+}
+.my-navbar .navbar{
+  padding: 18px 0px;
+}
+.my-navbar .nav-link{
+  font-weight: 700;
+  font-size: 17px;
+}
+.my-navbar .nav-link:hover{
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--iq-primary-pro) !important;
+}
+.my-navbar .search-input {
+  width: 100%;
+  height: 40px;
+  padding: 5px 15px 5px 40px;
+  border: 1px solid var(--iq-border-light);
+  border-radius: 0px 14px;
+  opacity: 0.7;
+}
+.my-navbar .search-box{
+  width: 400px;
+  position: relative;
+}
+.my-navbar .search-link{
+  position: absolute;
+  left: 15px;
+  top: 6px;
+  font-size: 16px;
+  color: var(--iq-black);
+}
+.my-navbar .search-audio{
+  position: absolute;
+  right: 15px;
+  top: 6px;
+  font-size: 16px;
+  color: var(--iq-black);
+}
+/************************************************************************************ Navbar Css Close*/
+
+/************************************************************************************ Home Css */
+
+.home-section .content-page{
+  padding: 20px 15px 20px;
+}
+
+.home-section .col-lg-12{
+  position: relative;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.home-section .col-lg-12 .iq-card-body {
+  padding: 20px;
+}
+.home-section .iq-card{
+  background: var(--iq-light-card);
+  border-radius: 15px;
+  margin-bottom: 30px;
+  border: none;
+  box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1);
+}
+.home-section .iq-card-header{
+  padding: 20px;
+}
+.home-section .card-title{
+  font-weight: 700;
+}
+.home-section .card img{
+  border-top-left-radius: 0;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.home-section .card h5{
+  font-weight: 600;
+  margin: 0px;
+  font-size: 1.400em;
+  color: var(--iq-black);
+}
+.home-section .text-primary a{
+  color: var(--iq-primary);
+}
+/*= Music Player =*/
+.home-section .iq-card-body{
+  padding: 20px;
+}
+.home-section .iq-realeses-back {
+  border-radius: 0px 30px;
+  background: url("/realease-back.jpg") center center no-repeat;
+  position: relative;
+  background-size: cover;
+}
+.home-section .iq-realeses-back:after {
+  border-radius: 0px 30px;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: auto;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  background: linear-gradient(to right, rgba(83, 100, 141, 0) 0%, rgb(22 12 23) 44%);
+}
+.home-section .iq-card-body .col-lg-5{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.home-section .iq-music-img {
+  height: 350px;
+  position: relative;
+  z-index: 9;
+}
+.home-section .equalizer{
+  position: relative;
+  bottom: 300px;
+  height: 500px;
+  width: 520px;
+  margin: 0 auto;
+  right: 10px;
+  transform: translate(0%, 50%) scale(0.25);
+}
+.home-section .bar {
+  width: 20%;
+  height: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: var(--iq-white);
+  transition: height 0.4s ease;
+  animation: bar 0.4s 0s both alternate ease infinite;
+  border-radius: 30px;
+}
+.home-section .bar-1 { animation-delay: 0.2s; }
+.home-section .bar-2 { left: 23%; animation-delay: 0.4s; }
+.home-section .bar-3 { left: 46%; animation-delay: 0.6s; }
+.home-section .bar-4 { left: 68%; animation-delay: 0.8s; }
+.home-section .bar-5 { left: 91%; animation-delay: 1.0s; }
+@keyframes bar {
+  0% { height: 0; }
+  100% { height: 100%; }
+}
+.home-section .player1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0;
+  position: relative;
+  z-index: 1;
+}
+.home-section .details1 {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 5px;
+  bottom: 360px;
+}
+
+.home-section .track-art1 {
+  margin-right: 5px;
+  height: 40px;
+  width: 40px;
+  background-image: url('/headphone-img.png');
+  background-size: cover;
+  border-radius: 15%;
+}
+.home-section .track-name1 {
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--iq-white);
+}
+.home-section .track-artist1 {
+  font-size: 14px;
+  color: var(--iq-white);
+}
+.home-section .buttons1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 ;
+  padding: 0;
+}
+.home-section .prev-track1, .next-track1 {
+  padding: 0 15px;
+  cursor: pointer;
+  color: var(--iq-white);
+  transition: opacity .2s;
+}
+
+
+.home-section ul.iq-song-slide li p {
+  color: var(--iq-white);
+  line-height: normal;
+}
+
+.home-section ul.iq-song-slide li span {
+  color: var(--iq-white)
+}
+
+.home-section ul.iq-song-slide li {
+  padding: 10px;
+  background: transparent;
+  border-radius: var(--iq-border-radius);
+  cursor: pointer;
+  font-weight: 600;
+}
+/*=  Music img css  =*/
+
+.home-section .mini-music-list a{
+  transition: all 0.5s ease-out 0s;
+}
+.home-section .overlay-music-icon{
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-in-out 0s;
+}
+.home-section .overlay-music-icon i{
+  color: var(--iq-white);
+  cursor: pointer;
+  font-size: 30px;
+}
+.home-section .iq-thumb-hotsong{
+  position: relative;
+  overflow: hidden;
+}
+.home-section .iq-thumb-hotsong .iq-music-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0s;
+  border-radius: 0px 20px 0px 20px;
+}
+.home-section .iq-thumb-hotsong:hover .iq-music-overlay {
+  opacity: 1;
+}
+.home-section .iq-thumb-hotsong .overlay-music-icon a {
+  display: inline-block;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  line-height: 34px;
+  font-size: 30px;
+  color: var(--iq-white);
+}
+.home-section .iq-thumb-hotsong:hover .overlay-music-icon {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+.home-section .iq-thumb-hotsong img {
+  border-radius: 0px 20px 0px 20px;
+  opacity: 1;
+}
+.home-section .avatar-60 {
+  height: 60px;
+  width: 60px;
+  line-height: 60px;
+}
+/*= Music img css close =*/
+
+.home-section .songs-item{
+  position: relative;
+  padding-top: 30px;
+  height: 410px;
+  z-index: 1;
+}
+.home-section .player2{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  padding: 5px 0;
+}
+.home-section .player2 span{
+  font-size: 20px;
+  color: var(--iq-white);
+}
+.home-section .dropstart i{
+  font-size: 20px;
+  color: var(--iq-primary);
+}
+/*= Scroll css =*/
+.home-section .scrollbar {
+  overflow-y: scroll;
+  margin-bottom: 25px;
+  scrollbar-color: var(--iq-primary) white;
+  scrollbar-width: thin;
+}
+.home-section #style-2::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+.home-section #style-2::-webkit-scrollbar
+{
+  width: 12px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+.home-section #style-2::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: var(--iq-primary);
+}
+@media screen and (max-width: 500px) {
+  .home-section .equalizer{
+    right: 30%;
+  }
+}
+/************************************************************************************ Home Css Close */
+
+/************************************************************************************ Category Css */
+.category-section .col-lg-12{
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 170px;
+}
+.category-section .col-lg-12 .iq-card {
+  padding: 20px;
+}
+.category-section .iq-card{
+  background: var(--iq-light-card);
+  border-radius: 15px;
+  margin-bottom: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border: none;
+  box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1);
+}
+.category-section .iq-card-header{
+  align-items: center!important;
+  border-bottom: 1px solid var(--iq-border-light);
+  justify-content: space-between !important;
+  display: flex;
+  margin-bottom: 10px;
+}
+.category-section .card-title{
+  font-weight: 700;
+  color: var(--iq-title-text);
+}
+.category-section .card-body p{
+  color: var(--iq-body-text);
+}
+.category-section .card{
+  margin-bottom: 10px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 15px;
+}
+.category-section .card img{
+  border-top-left-radius: 0;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.category-section .card .single-link{
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0px;
+  font-size: 1.400em;
+  color: var(--iq-black);
+}
+.category-section .text-primary a{
+  color: var(--iq-primary);
+}
+/*= CARD BOX =*/
+.category-section .iq-thumb{
+  position: relative;
+}
+.category-section .iq-music-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0s;
+  border-radius: 0px 15px; }
+.category-section .iq-thumb:hover .iq-music-overlay {
+  opacity: 1;
+}
+.category-section .play-btn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility:  hidden;
+  font-size: 40px;
+  color:var(--iq-light);
+  transition: all 0.1s ease-in-out 0.1s;
+}
+.category-section .iq-thumb:hover .play-btn{
+  visibility: visible;
+}
+/************************************************************************************ Category Css Close */
+
+/************************************************************************************ Artists Css */
+
+.artists-section .iq-card-header{
+  padding: 20px;
+}
+.artists-section .iq-card-body{
+  padding: 20px;
+}
+.artists-section .card-title{
+  font-weight: 700;
+  color: var(--iq-title-text);
+}
+.artists-section .card-body p{
+  color: var(--iq-body-text);
+}
+.artists-section .card{
+  margin-bottom: 10px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 15px;
+}
+.artists-section .card-body a{
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.400em;
+  color: var(--iq-black);
+}
+.artists-section .text-primary a{
+  color: var(--iq-primary);
+}
+
+
+/*= Artist List =*/
+.artists-section .artist-list .card{
+  margin-bottom: 10px;
+  border: none;
+}
+.artists-section .card  img{
+  border-top-left-radius: 0;
+  border-top-right-radius: 80px;
+  border-bottom-left-radius: 80px;
+}
+
+.artists-section nav{
+  padding: 20px;
+}
+/************************************************************************************ Artists Css Close */
+
+/************************************************************************************ Writer Css  */
+.writer-section .col-lg-12{
+  padding: 15px;
+  margin-bottom: 150px;
+}
+.writer-section .iq-card-body {
+  padding: 20px;
+}
+.writer-section .iq-card{
+  background: var(--iq-light-card);
+  border-radius: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border: none;
+  box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1);
+}
+.writer-section .iq-card nav{
+  padding: 20px;
+}
+.writer-section .iq-card-header{
+  padding: 20px;
+  align-items: center!important;
+  border-bottom: 1px solid var(--iq-border-light);
+  justify-content: space-between !important;
+  display: flex;
+}
+.writer-section .card-title{
+  font-weight: 700;
+  color: var(--iq-title-text);
+}
+.writer-section .card-body p{
+  color: var(--iq-body-text);
+}
+.writer-section .card{
+  margin-bottom: 10px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 15px;
+}
+.writer-section .card img{
+  border-top-left-radius: 0;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.writer-section .card .card-body a{
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0px;
+  font-size: 1.400em;
+  color: var(--iq-black);
+}
+
+/************************************************************************************ Writer Css Close */
+
+/************************************************************************************ Label Css   */
+.label-section .col-lg-12{
+  padding: 15px;
+  margin-bottom: 150px;
+}
+.label-section .iq-card-body {
+  padding: 20px;
+}
+.label-section .iq-card{
+  background: var(--iq-light-card);
+  border-radius: 15px;
+  margin-bottom: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border: none;
+  box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1);
+}
+.label-section .iq-card nav{
+  padding: 20px;
+  margin: 0;
+}
+.label-section .iq-card-header{
+  padding: 20px;
+  align-items: center!important;
+  border-bottom: 1px solid var(--iq-border-light);
+  justify-content: space-between !important;
+  display: flex;
+}
+.label-section .card-title{
+  font-weight: 700;
+  color: var(--iq-title-text);
+}
+.label-section .card-body p{
+  color: var(--iq-body-text);
+}
+.label-section .card{
+  margin-bottom: 10px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 15px;
+}
+.label-section .card img{
+  border-top-left-radius: 0;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.label-section .iq-card-body a{
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0px;
+  font-size: 1.400em;
+  color: var(--iq-black);
+}
+
+/************************************************************************************ Label Css Close */
+/************************************************************************************ Song Details Css */
+.song-details-section .iq-card {
+  background: var(--iq-light-card);
+  border-radius: 15px;
+  margin-bottom: 30px;
+  border: none;
+  padding:20px;
+  box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1);
+}
+.song-details-section .iq-card-header{
+  padding: 20px;
+  align-items: center!important;
+  border-bottom: 1px solid var(--iq-border-light);
+  text-align: center;
+}
+.song-details-section .iq-card-header .song-name{
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--iq-title-text);
+}
+.song-details-section .song-details{
+  border-top-right-radius: 15px;
+  border-bottom-left-radius:15px ;
+}
+.song-details-section .iq-card h3{
+  font-weight: 700;
+}
+.song-details-section .popular-song{
+  border-top-right-radius: 15px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius:15px;
+  border-bottom-right-radius:0px;
+}
+/************************************************************************************ Song Details Css Close */
+
+/************************************************************************************ Player Section Css */
+.player-section .iq-footer {
+  padding: 0 15px 0 30px;
+  min-height: 73px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: inline-block;
+  z-index: 99;
+  background: rgba(1, 4, 27, 0.6);
+  margin: 0;
+  touch-action: pan-x;
+}
+.player-section .player {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.player-section .details {
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 600px) {
+  .player-section .details{
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+}
+.player-section .track-art {
+  margin-right: 5px;
+  height: 40px;
+  width: 40px;
+  background-image: url('/headphone-img.png');
+  background-size: cover;
+  border-radius: 15%;
+}
+.player-section .track-name {
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--iq-white);
+}
+.player-section .track-artist {
+  font-size: 14px;
+  color: var(--iq-white);
+}
+.player-section .buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.player-section .slider_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.player-section .current-time, .total-duration{
+  padding: 10px;
+  color: var(--iq-white);
+}
+.player-section input[type="range"] {
+  background: var(--iq-primary);
+}
+.player-section .seek_slider{
+  width: 80%;
+  appearance: none;
+  height: 5px;
+  border-radius: 10px;
+}
+/*= volume control css =*/
+.player-section .volume-icon{
+  position: relative;
+  cursor: pointer;
+}
+.player-section .volume_slider{
+  width: 120px;
+  appearance: none;
+  height: 5px;
+  border-radius: 10px;
+}
+@media screen and (max-width: 600px) {
+  .player-section  .volume_slider{
+    position: fixed;
+    transform: rotate(270deg);
+    right:-25px;
+    bottom: 100px;
+
+  }
+  .player-section .volume_slider:focus + *{
+    position: fixed;
+  }
+}
+/*= volume control css close =*/
+.player-section .prev-track{
+  color: var(--iq-white);
+  cursor: pointer;
+  margin-right: 5px;
+}
+.player-section .next-track{
+  color: var(--iq-white);
+  cursor: pointer;
+  margin-left: 5px;
+}
+.player-section i.fa-volume-up{
+  padding: 10px;
+  color: var(--iq-white);
+}
+/************************************************************************************ Player Section Css Close */
+/************************************************************************************ Player Volume Css */
+
+.player-volume .volume-box {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 295px;
+  transform: translateX(-50%);
+  z-index: 1;
+  padding: 0 20px;
+}
+.player-volume .volume-box .volume-down {
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #72646f;
+}
+.player-volume .volume-box .volume-up {
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #72646f;
+}
+.player-volume .volume-box .volume-up::selection {
+  background-color: unset;
+}
+.player-volume .volume-box input[type="range"] {
+  height: 5px;
+  width: 150px;
+  margin: 0 0 15px 0;
+}
+.player-volume .volume-box.active {
+  display: block;
+}
+/************************************************************************************ Player Volume Css Close */
+
+/************************************************************************************ Song Slug Css */
+.slug-section .trending-song{
+  font-weight: 600;
+}
+.slug-section .track-name1 {
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--iq-title-text);
+}
+.slug-section .track-artist1 {
+  font-size: 14px;
+  color: var(--iq-title-text);
+}
+/* = Music img css  =*/
+
+.slug-section .mini-music-list a{
+  transition: all 0.5s ease-out 0s;
+}
+.slug-section .overlay-music-icon{
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-in-out 0s;
+}
+.slug-section .overlay-music-icon i{
+  color: var(--iq-white);
+  cursor: pointer;
+  font-size: 30px;
+}
+.slug-section .iq-thumb-hotsong{
+  position: relative;
+  overflow: hidden;
+}
+.slug-section .iq-thumb-hotsong .iq-music-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0s;
+  border-radius: 0px 20px 0px 20px;
+}
+.slug-section .iq-thumb-hotsong:hover .iq-music-overlay {
+  opacity: 1;
+}
+.slug-section .iq-thumb-hotsong .overlay-music-icon a {
+  display: inline-block;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  line-height: 34px;
+  font-size: 30px;
+  color: var(--iq-white);
+}
+.slug-section .iq-thumb-hotsong:hover .overlay-music-icon {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+.slug-section .iq-thumb-hotsong img {
+  border-radius: 0px 20px 0px 20px;
+  opacity: 1;
+}
+.slug-section .avatar-60 {
+  height: 60px;
+  width: 60px;
+  line-height: 60px;
+}
+/*= Music img css close =*/
+
+.slug-section .player2{
+  display: flex;
+  border-bottom: 1px solid var(--iq-border-light);
+  justify-content:space-between;
+  padding: 5px 0;
+}
+.slug-section .song-artist{
+  width: 300px;
+}
+.slug-section .player2 span{
+  font-size: 20px;
+  color: var(--iq-title-text);
+}
+.slug-section .dropstart i{
+  font-size: 20px;
+  color: var(--iq-primary);
+}
+@media only screen and (max-width: 600px){
+  .slug-section .player2 .song-artist{
+    max-width: 200px!important;
+
+  }
+  .slug-section .song-artist .track-name1 {
+    text-overflow: ellipsis !important;
+    white-space: nowrap;
+    overflow: hidden!important;
+  }
+  .slug-section .song-artist .track-artist1 {
+    white-space: nowrap;
+    overflow: hidden!important;
+    text-overflow: ellipsis!important;
+  }
+}
+/************************************************************************************ Song Slug Css Close */

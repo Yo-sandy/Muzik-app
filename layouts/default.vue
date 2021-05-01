@@ -81,7 +81,7 @@
   --iq-color20: #a0746b;
 
 }
-.front-navbar .link-active-color{
+.my-navbar .link-active-color{
   color: var(--iq-primary-pro)!important;
 }
 .content-page{
