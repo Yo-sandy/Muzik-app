@@ -3,12 +3,12 @@ export const state = ()=> ({
   data:[]
 })
 
-  // export const getters = {
-  //   getWriterByID :(state) => (writer_slug) =>{
-  //     const writer =  state.data.filter(writer => writer.slug === writer_slug)[0]
-  //    return writer;
-  //   },
-  // }
+    export const getters = {
+    getWriterByID :(state) => (writer_slug) =>{
+       const writer =  state.data.data.filter(writer => writer.slug === writer_slug)[0]
+      return writer;
+     },
+    }
 
 
 export const mutations = {

@@ -91,7 +91,6 @@ export default {
       this.$store.dispatch('categories/getCategories').then(res=>{
         this.category = this.$store.getters['categories/getCategoryByID'](this.$route.params.slug)
       })
-
     },
 
     playSong(single_song, index){

@@ -20,7 +20,7 @@
                    <nuxt-link to="/category" class="nav-link">Category</nuxt-link>
                  </li>
                  <li class="nav-item">
-                   <nuxt-link to="/artists" class="nav-link">Artists</nuxt-link>
+                   <nuxt-link to="/artist" class="nav-link">Artist</nuxt-link>
                  </li>
                  <li class="nav-item">
                    <nuxt-link to="/writer" class="nav-link">Writer</nuxt-link>

@@ -574,6 +574,60 @@
 }
 
 /************************************************************************************ Label Css Close */
+
+/************************************************************************************ Music Css */
+.music-section .col-lg-12{
+  padding: 15px;
+  margin-bottom: 150px;
+}
+.music-section .iq-card-body {
+  padding: 20px;
+}
+.music-section .iq-card .card{
+  background: var(--iq-light-card);
+  border-radius: 15px;
+  margin-bottom: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border: none;
+}
+.music-section .iq-card nav{
+  padding: 20px;
+  margin: 0;
+}
+.music-section .iq-card-header{
+  padding: 20px;
+  align-items: center!important;
+  border-bottom: 1px solid var(--iq-border-light);
+  justify-content: space-between !important;
+  display: flex;
+}
+.music-section .card-title{
+  font-weight: 700;
+  color: var(--iq-title-text);
+}
+.music-section .card-body p{
+  color: var(--iq-body-text);
+}
+.music-section .card{
+  margin-bottom: 10px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 15px;
+}
+.music-section .card img{
+  border-radius: 0px 50px 0px 50px;
+}
+.music-section .iq-card-body a{
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0px;
+  font-size: 1.400em;
+  color: var(--iq-black);
+}
+
+/************************************************************************************ Music Css Close */
+
 /************************************************************************************ Song Details Css */
 .song-details-section .iq-card {
   background: var(--iq-light-card);
@@ -832,7 +886,7 @@
   opacity: 1;
 }
 .slug-section .iq-thumb-hotsong img {
-  border-radius: 0px 20px 0px 20px;
+  border-radius: 0px 30px 30px 30px;
   opacity: 1;
 }
 .slug-section .avatar-60 {

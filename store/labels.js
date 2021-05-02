@@ -2,6 +2,12 @@ export const state = ()=> ({
   data:[]
 })
 
+export const getters = {
+  getLabelByID :(state) => (label_slug) =>{
+    const  label =  state.data.data.filter(artist => artist.slug === label_slug)[0]
+    return label;
+  },
+}
 
 
 export const mutations = {

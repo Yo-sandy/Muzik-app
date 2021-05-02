@@ -4,8 +4,7 @@ export const state = ()=> ({
 
   export const getters = {
     getArtistByID :(state) => (artist_slug) =>{
-      const  artist =  state.data.filter(artist => artist.slug === artist_slug)[0]
-      console.log(artist)
+      const  artist =  state.data.data.filter(artist => artist.slug === artist_slug)[0]
      return artist;
     },
   }
