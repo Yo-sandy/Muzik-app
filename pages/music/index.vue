@@ -11,11 +11,12 @@
           <div class="row">
             <div class="card-group col-lg-2 col-md-3 col-sm-6 col-12 mb-2 iq-music-box"
                  v-for="music in $store.state.musics.data.data"
+                 v-if="music.name !== ''"
                  :key="music.id"
                  aria-hidden="false">
               <div class="card">
                 <div>
-                  <img src="/music-pruducer.jpg" alt="" class="card-img-top">
+                  <img src="/music-producer.jpg" alt="" class="card-img-top">
                 </div>
                 <div class="card-body text-center">
                   <nuxt-link

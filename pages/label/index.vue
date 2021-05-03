@@ -11,6 +11,7 @@
           <div class="row">
             <div class="col-lg-2 col-md-3 col-sm-6 col-12 mb-2 iq-music-box"
                  v-for="label in $store.state.labels.data.data"
+                 v-if="label.name !== ''"
                  :key="label.id"
                  aria-hidden="false">
               <div class="card">
@@ -36,7 +37,7 @@
               </nuxt-link>
             </li>
             <li class="page-item d-flex">
-              <nuxt-link class="page-link" to="#" v-for="i in 7" :key="i">1</nuxt-link></li>
+              <nuxt-link class="page-link" to="#" v-for="i in 5" :key="i">1</nuxt-link></li>
             <li class="page-item">
               <nuxt-link class="page-link" to="#" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>

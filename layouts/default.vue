@@ -86,9 +86,8 @@
 }
 .content-page{
   overflow: hidden;
-  padding: 20px 20px 73px;
+  padding: 20px 20px 10px;
   min-height: 100vh;
-  margin-bottom: 110px;
 }
 .iq-card{
   background: var(--iq-light-card);

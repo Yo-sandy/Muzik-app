@@ -72,7 +72,7 @@
                       <span class="dropdown"  data-bs-toggle="dropdown" role="button">
                         <i class="fas fa-ellipsis-v"></i>
                       </span>
-                     <div class="dropdown-menu">
+                     <div class="dropdown-menu p-0">
                        <nuxt-link to="/song-details" class="dropdown-item">
                          <i class="fas fa-eye text-dark me-md-2"></i>View
                        </nuxt-link>

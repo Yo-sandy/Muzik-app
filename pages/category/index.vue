@@ -30,6 +30,7 @@
           <div class="row">
             <div class="card-group col-lg-2 col-md-3 col-sm-6 col-12 mb-2 iq-music-box"
                  v-for="(single_song, index) in category.songs.data"
+                 v-if="category.name !== ''"
                  :key="single_song.id"
                  aria-hidden="false"
             >

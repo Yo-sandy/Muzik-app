@@ -11,6 +11,7 @@
          <div class="row">
            <div class="card-group col-lg-2 col-md-3 col-sm-6 col-12 mb-2 iq-music-box"
                 v-for="writer in $store.state.writers.data.data"
+                v-if="writer.name !== ''"
                 :key="writer.id"
                 aria-hidden="false">
              <div class="card">

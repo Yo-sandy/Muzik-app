@@ -25,7 +25,7 @@
   opacity: 0.7;
 }
 .my-navbar .search-box{
-  width: 400px;
+  max-width: 400px;
   position: relative;
 }
 .my-navbar .search-link{
@@ -334,7 +334,6 @@
 .category-section .col-lg-12{
   padding-left: 15px;
   padding-right: 15px;
-  padding-bottom: 170px;
 }
 .category-section .col-lg-12 .iq-card {
   padding: 20px;
@@ -468,7 +467,7 @@
 /************************************************************************************ Writer Css  */
 .writer-section .col-lg-12{
   padding: 15px;
-  margin-bottom: 150px;
+  margin-bottom: 15px;
 }
 .writer-section .iq-card-body {
   padding: 20px;
@@ -522,7 +521,7 @@
 /************************************************************************************ Label Css   */
 .label-section .col-lg-12{
   padding: 15px;
-  margin-bottom: 150px;
+  margin-bottom: 15px;
 }
 .label-section .iq-card-body {
   padding: 20px;
@@ -578,7 +577,7 @@
 /************************************************************************************ Music Css */
 .music-section .col-lg-12{
   padding: 15px;
-  margin-bottom: 150px;
+  margin-bottom: 15px;
 }
 .music-section .iq-card-body {
   padding: 20px;
